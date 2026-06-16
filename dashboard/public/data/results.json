@@ -1,0 +1,5676 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-06-16T02:40:13Z",
+  "git_commit": "n/a",
+  "scenarios": {
+    "S1_baseline_linear": {
+      "accuracy": 0.44,
+      "latency_ms_p50": 5.14,
+      "latency_ms_p95": 5.25,
+      "uptime": 1.0,
+      "msgs_per_query": 0.0,
+      "replication_coverage": 0.0,
+      "distress_rate": 0.0,
+      "total_queries": 200
+    },
+    "S2_mesh_p2p": {
+      "accuracy": 0.975,
+      "latency_ms_p50": 103.24,
+      "latency_ms_p95": 122.87,
+      "uptime": 1.0,
+      "msgs_per_query": 79.77,
+      "replication_coverage": 3.0,
+      "distress_rate": 0.0,
+      "total_queries": 200
+    },
+    "S3_mesh_2_failed": {
+      "accuracy": 0.97,
+      "latency_ms_p50": 57.8,
+      "latency_ms_p95": 70.24,
+      "uptime": 1.0,
+      "msgs_per_query": 20.97,
+      "replication_coverage": 2.98,
+      "distress_rate": 0.0,
+      "total_queries": 200
+    },
+    "S4_mesh_20pct_loss": {
+      "accuracy": 0.97,
+      "latency_ms_p50": 86.81,
+      "latency_ms_p95": 111.34,
+      "uptime": 1.0,
+      "msgs_per_query": 62.83,
+      "replication_coverage": 2.6,
+      "distress_rate": 0.0,
+      "total_queries": 200
+    },
+    "S5_karnataka_apmc_mesh": {
+      "accuracy": 0.9333,
+      "latency_ms_p50": 110.91,
+      "latency_ms_p95": 119.53,
+      "uptime": 1.0,
+      "msgs_per_query": 79.6,
+      "replication_coverage": 3.0,
+      "distress_rate": 0.0,
+      "total_queries": 15
+    },
+    "S6_karnataka_apmc_baseline": {
+      "accuracy": 0.5333,
+      "latency_ms_p50": 5.2,
+      "latency_ms_p95": 5.28,
+      "uptime": 1.0,
+      "msgs_per_query": 0.0,
+      "replication_coverage": 0.0,
+      "distress_rate": 0.0,
+      "total_queries": 15
+    }
+  },
+  "raw_per_query": {
+    "S1_baseline_linear": [
+      {
+        "qid": "q0000",
+        "correct": true,
+        "latency_ms": 5.194902420043945,
+        "confidence": 0.9595496813965125
+      },
+      {
+        "qid": "q0001",
+        "correct": false,
+        "latency_ms": 5.31768798828125,
+        "confidence": 0.9081128851953352
+      },
+      {
+        "qid": "q0002",
+        "correct": false,
+        "latency_ms": 5.278825759887695,
+        "confidence": 0.9827854760376531
+      },
+      {
+        "qid": "q0003",
+        "correct": false,
+        "latency_ms": 5.263566970825195,
+        "confidence": 0.9666063677707588
+      },
+      {
+        "qid": "q0004",
+        "correct": false,
+        "latency_ms": 5.129098892211914,
+        "confidence": 0.824844977148233
+      },
+      {
+        "qid": "q0005",
+        "correct": false,
+        "latency_ms": 5.096912384033203,
+        "confidence": 0.8704712321086546
+      },
+      {
+        "qid": "q0006",
+        "correct": false,
+        "latency_ms": 5.092144012451172,
+        "confidence": 0.9675402502901433
+      },
+      {
+        "qid": "q0007",
+        "correct": false,
+        "latency_ms": 5.265712738037109,
+        "confidence": 0.9638385459738009
+      },
+      {
+        "qid": "q0008",
+        "correct": true,
+        "latency_ms": 5.178689956665039,
+        "confidence": 0.8400742979528917
+      },
+      {
+        "qid": "q0009",
+        "correct": true,
+        "latency_ms": 5.202054977416992,
+        "confidence": 0.9369770197112736
+      },
+      {
+        "qid": "q0010",
+        "correct": false,
+        "latency_ms": 5.212545394897461,
+        "confidence": 0.9230824398201768
+      },
+      {
+        "qid": "q0011",
+        "correct": false,
+        "latency_ms": 5.122900009155273,
+        "confidence": 0.9962578393535727
+      },
+      {
+        "qid": "q0012",
+        "correct": true,
+        "latency_ms": 5.097627639770508,
+        "confidence": 0.8993236073105851
+      },
+      {
+        "qid": "q0013",
+        "correct": false,
+        "latency_ms": 5.246639251708984,
+        "confidence": 0.8159130965336595
+      },
+      {
+        "qid": "q0014",
+        "correct": false,
+        "latency_ms": 5.238771438598633,
+        "confidence": 0.9100160146990397
+      },
+      {
+        "qid": "q0015",
+        "correct": false,
+        "latency_ms": 5.123376846313477,
+        "confidence": 0.9805166506472687
+      },
+      {
+        "qid": "q0016",
+        "correct": false,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9369691586445807
+      },
+      {
+        "qid": "q0017",
+        "correct": false,
+        "latency_ms": 5.095243453979492,
+        "confidence": 0.9882351487225011
+      },
+      {
+        "qid": "q0018",
+        "correct": false,
+        "latency_ms": 5.092859268188477,
+        "confidence": 0.9665489030431832
+      },
+      {
+        "qid": "q0019",
+        "correct": true,
+        "latency_ms": 5.20014762878418,
+        "confidence": 0.9158124639178383
+      },
+      {
+        "qid": "q0020",
+        "correct": false,
+        "latency_ms": 5.162954330444336,
+        "confidence": 0.837661174368979
+      },
+      {
+        "qid": "q0021",
+        "correct": false,
+        "latency_ms": 5.232572555541992,
+        "confidence": 0.9531293398277989
+      },
+      {
+        "qid": "q0022",
+        "correct": true,
+        "latency_ms": 5.241870880126953,
+        "confidence": 0.9861955172710517
+      },
+      {
+        "qid": "q0023",
+        "correct": true,
+        "latency_ms": 5.223989486694336,
+        "confidence": 0.9092165441884696
+      },
+      {
+        "qid": "q0024",
+        "correct": true,
+        "latency_ms": 5.788564682006836,
+        "confidence": 0.8877193694366499
+      },
+      {
+        "qid": "q0025",
+        "correct": false,
+        "latency_ms": 5.124807357788086,
+        "confidence": 0.8838751542487009
+      },
+      {
+        "qid": "q0026",
+        "correct": false,
+        "latency_ms": 5.102396011352539,
+        "confidence": 0.9994203594553304
+      },
+      {
+        "qid": "q0027",
+        "correct": false,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9868214802051282
+      },
+      {
+        "qid": "q0028",
+        "correct": true,
+        "latency_ms": 5.139827728271484,
+        "confidence": 0.8773699539835461
+      },
+      {
+        "qid": "q0029",
+        "correct": true,
+        "latency_ms": 5.092859268188477,
+        "confidence": 0.9944139485610834
+      },
+      {
+        "qid": "q0030",
+        "correct": true,
+        "latency_ms": 5.142927169799805,
+        "confidence": 0.8754250373876917
+      },
+      {
+        "qid": "q0031",
+        "correct": false,
+        "latency_ms": 5.094766616821289,
+        "confidence": 0.946502554169996
+      },
+      {
+        "qid": "q0032",
+        "correct": true,
+        "latency_ms": 5.096435546875,
+        "confidence": 0.974704639161026
+      },
+      {
+        "qid": "q0033",
+        "correct": true,
+        "latency_ms": 5.093812942504883,
+        "confidence": 0.9453020213207035
+      },
+      {
+        "qid": "q0034",
+        "correct": true,
+        "latency_ms": 5.2032470703125,
+        "confidence": 0.9952976582325794
+      },
+      {
+        "qid": "q0035",
+        "correct": true,
+        "latency_ms": 5.120754241943359,
+        "confidence": 0.7584243498645303
+      },
+      {
+        "qid": "q0036",
+        "correct": false,
+        "latency_ms": 5.099058151245117,
+        "confidence": 0.976229457649057
+      },
+      {
+        "qid": "q0037",
+        "correct": true,
+        "latency_ms": 5.201578140258789,
+        "confidence": 0.9310352577168399
+      },
+      {
+        "qid": "q0038",
+        "correct": false,
+        "latency_ms": 5.241632461547852,
+        "confidence": 0.9745605214796941
+      },
+      {
+        "qid": "q0039",
+        "correct": false,
+        "latency_ms": 5.234956741333008,
+        "confidence": 0.9884590580992895
+      },
+      {
+        "qid": "q0040",
+        "correct": false,
+        "latency_ms": 5.234003067016602,
+        "confidence": 0.9030107075409272
+      },
+      {
+        "qid": "q0041",
+        "correct": false,
+        "latency_ms": 5.248308181762695,
+        "confidence": 0.94796135125632
+      },
+      {
+        "qid": "q0042",
+        "correct": false,
+        "latency_ms": 5.1250457763671875,
+        "confidence": 0.9886898889857565
+      },
+      {
+        "qid": "q0043",
+        "correct": false,
+        "latency_ms": 5.093574523925781,
+        "confidence": 0.9170466727598151
+      },
+      {
+        "qid": "q0044",
+        "correct": false,
+        "latency_ms": 5.093097686767578,
+        "confidence": 0.9625664632546818
+      },
+      {
+        "qid": "q0045",
+        "correct": true,
+        "latency_ms": 5.104541778564453,
+        "confidence": 0.9498343987935197
+      },
+      {
+        "qid": "q0046",
+        "correct": false,
+        "latency_ms": 5.217552185058594,
+        "confidence": 0.8688953140043785
+      },
+      {
+        "qid": "q0047",
+        "correct": false,
+        "latency_ms": 5.227804183959961,
+        "confidence": 0.9685982716927071
+      },
+      {
+        "qid": "q0048",
+        "correct": false,
+        "latency_ms": 5.1670074462890625,
+        "confidence": 0.9905325627055622
+      },
+      {
+        "qid": "q0049",
+        "correct": true,
+        "latency_ms": 5.146980285644531,
+        "confidence": 0.8924609984511769
+      },
+      {
+        "qid": "q0050",
+        "correct": true,
+        "latency_ms": 5.100250244140625,
+        "confidence": 0.96356968975158
+      },
+      {
+        "qid": "q0051",
+        "correct": true,
+        "latency_ms": 5.2051544189453125,
+        "confidence": 0.9851662255414224
+      },
+      {
+        "qid": "q0052",
+        "correct": true,
+        "latency_ms": 5.231142044067383,
+        "confidence": 0.8678760493650286
+      },
+      {
+        "qid": "q0053",
+        "correct": true,
+        "latency_ms": 5.217313766479492,
+        "confidence": 0.9965435402968577
+      },
+      {
+        "qid": "q0054",
+        "correct": true,
+        "latency_ms": 5.227565765380859,
+        "confidence": 0.8396876590228707
+      },
+      {
+        "qid": "q0055",
+        "correct": true,
+        "latency_ms": 5.130767822265625,
+        "confidence": 0.9174577008600562
+      },
+      {
+        "qid": "q0056",
+        "correct": true,
+        "latency_ms": 5.205631256103516,
+        "confidence": 0.9478287149696716
+      },
+      {
+        "qid": "q0057",
+        "correct": true,
+        "latency_ms": 5.234479904174805,
+        "confidence": 0.8749419004001645
+      },
+      {
+        "qid": "q0058",
+        "correct": true,
+        "latency_ms": 5.118608474731445,
+        "confidence": 0.9829152914166076
+      },
+      {
+        "qid": "q0059",
+        "correct": true,
+        "latency_ms": 5.093574523925781,
+        "confidence": 0.9426428847806703
+      },
+      {
+        "qid": "q0060",
+        "correct": false,
+        "latency_ms": 5.099058151245117,
+        "confidence": 0.9357547693309531
+      },
+      {
+        "qid": "q0061",
+        "correct": true,
+        "latency_ms": 5.096197128295898,
+        "confidence": 0.990183046492709
+      },
+      {
+        "qid": "q0062",
+        "correct": false,
+        "latency_ms": 5.094051361083984,
+        "confidence": 0.9743235128409679
+      },
+      {
+        "qid": "q0063",
+        "correct": false,
+        "latency_ms": 5.2013397216796875,
+        "confidence": 0.9382622681625481
+      },
+      {
+        "qid": "q0064",
+        "correct": false,
+        "latency_ms": 5.2394866943359375,
+        "confidence": 0.8591756086192088
+      },
+      {
+        "qid": "q0065",
+        "correct": false,
+        "latency_ms": 5.240917205810547,
+        "confidence": 0.9665192604669938
+      },
+      {
+        "qid": "q0066",
+        "correct": false,
+        "latency_ms": 5.120038986206055,
+        "confidence": 0.9929517886102871
+      },
+      {
+        "qid": "q0067",
+        "correct": false,
+        "latency_ms": 5.095005035400391,
+        "confidence": 0.8043902980001079
+      },
+      {
+        "qid": "q0068",
+        "correct": true,
+        "latency_ms": 5.213022232055664,
+        "confidence": 0.8497690740040489
+      },
+      {
+        "qid": "q0069",
+        "correct": true,
+        "latency_ms": 5.242347717285156,
+        "confidence": 0.9867223015248321
+      },
+      {
+        "qid": "q0070",
+        "correct": false,
+        "latency_ms": 5.18345832824707,
+        "confidence": 0.9502683295716211
+      },
+      {
+        "qid": "q0071",
+        "correct": true,
+        "latency_ms": 5.223512649536133,
+        "confidence": 0.8436819953337236
+      },
+      {
+        "qid": "q0072",
+        "correct": false,
+        "latency_ms": 5.11479377746582,
+        "confidence": 0.9371046462904561
+      },
+      {
+        "qid": "q0073",
+        "correct": true,
+        "latency_ms": 5.095005035400391,
+        "confidence": 0.7806174885503527
+      },
+      {
+        "qid": "q0074",
+        "correct": false,
+        "latency_ms": 5.104541778564453,
+        "confidence": 0.9840151371182455
+      },
+      {
+        "qid": "q0075",
+        "correct": true,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9697666848734546
+      },
+      {
+        "qid": "q0076",
+        "correct": false,
+        "latency_ms": 5.21540641784668,
+        "confidence": 0.9087743252220071
+      },
+      {
+        "qid": "q0077",
+        "correct": true,
+        "latency_ms": 5.348443984985352,
+        "confidence": 0.9791943028429161
+      },
+      {
+        "qid": "q0078",
+        "correct": true,
+        "latency_ms": 5.127906799316406,
+        "confidence": 0.9030563191672591
+      },
+      {
+        "qid": "q0079",
+        "correct": true,
+        "latency_ms": 5.226850509643555,
+        "confidence": 0.7808381914500708
+      },
+      {
+        "qid": "q0080",
+        "correct": true,
+        "latency_ms": 5.243539810180664,
+        "confidence": 0.9137471803853656
+      },
+      {
+        "qid": "q0081",
+        "correct": false,
+        "latency_ms": 5.118370056152344,
+        "confidence": 0.8885450437134765
+      },
+      {
+        "qid": "q0082",
+        "correct": true,
+        "latency_ms": 5.095481872558594,
+        "confidence": 0.9184370957823128
+      },
+      {
+        "qid": "q0083",
+        "correct": false,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9996851255769114
+      },
+      {
+        "qid": "q0084",
+        "correct": false,
+        "latency_ms": 5.14984130859375,
+        "confidence": 0.8972009769638755
+      },
+      {
+        "qid": "q0085",
+        "correct": false,
+        "latency_ms": 5.142688751220703,
+        "confidence": 0.91039239754397
+      },
+      {
+        "qid": "q0086",
+        "correct": false,
+        "latency_ms": 5.207061767578125,
+        "confidence": 0.9400346443375104
+      },
+      {
+        "qid": "q0087",
+        "correct": true,
+        "latency_ms": 5.298614501953125,
+        "confidence": 0.7620108367984179
+      },
+      {
+        "qid": "q0088",
+        "correct": false,
+        "latency_ms": 5.165576934814453,
+        "confidence": 0.8774574539285279
+      },
+      {
+        "qid": "q0089",
+        "correct": false,
+        "latency_ms": 5.105495452880859,
+        "confidence": 0.9564683485665337
+      },
+      {
+        "qid": "q0090",
+        "correct": true,
+        "latency_ms": 5.21087646484375,
+        "confidence": 0.8091267301960373
+      },
+      {
+        "qid": "q0091",
+        "correct": true,
+        "latency_ms": 5.135297775268555,
+        "confidence": 0.9923757062721689
+      },
+      {
+        "qid": "q0092",
+        "correct": true,
+        "latency_ms": 5.209922790527344,
+        "confidence": 0.8358630727293354
+      },
+      {
+        "qid": "q0093",
+        "correct": true,
+        "latency_ms": 5.229473114013672,
+        "confidence": 0.9312566907580462
+      },
+      {
+        "qid": "q0094",
+        "correct": false,
+        "latency_ms": 5.123376846313477,
+        "confidence": 0.934183460116191
+      },
+      {
+        "qid": "q0095",
+        "correct": false,
+        "latency_ms": 5.146026611328125,
+        "confidence": 0.9788933433114139
+      },
+      {
+        "qid": "q0096",
+        "correct": true,
+        "latency_ms": 5.150079727172852,
+        "confidence": 0.8510032527546801
+      },
+      {
+        "qid": "q0097",
+        "correct": false,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9344608884461488
+      },
+      {
+        "qid": "q0098",
+        "correct": true,
+        "latency_ms": 5.097627639770508,
+        "confidence": 0.8171267253319974
+      },
+      {
+        "qid": "q0099",
+        "correct": false,
+        "latency_ms": 5.100250244140625,
+        "confidence": 0.7834936358921726
+      },
+      {
+        "qid": "q0100",
+        "correct": true,
+        "latency_ms": 5.10096549987793,
+        "confidence": 0.873973595286534
+      },
+      {
+        "qid": "q0101",
+        "correct": true,
+        "latency_ms": 5.094289779663086,
+        "confidence": 0.956267970460712
+      },
+      {
+        "qid": "q0102",
+        "correct": true,
+        "latency_ms": 5.20634651184082,
+        "confidence": 0.8922120462734404
+      },
+      {
+        "qid": "q0103",
+        "correct": false,
+        "latency_ms": 5.226850509643555,
+        "confidence": 0.9757565794644123
+      },
+      {
+        "qid": "q0104",
+        "correct": true,
+        "latency_ms": 5.131721496582031,
+        "confidence": 0.8319002246723306
+      },
+      {
+        "qid": "q0105",
+        "correct": false,
+        "latency_ms": 5.209207534790039,
+        "confidence": 0.9008098536570839
+      },
+      {
+        "qid": "q0106",
+        "correct": false,
+        "latency_ms": 5.246400833129883,
+        "confidence": 0.9533258805973196
+      },
+      {
+        "qid": "q0107",
+        "correct": true,
+        "latency_ms": 5.194425582885742,
+        "confidence": 0.9441958750475147
+      },
+      {
+        "qid": "q0108",
+        "correct": false,
+        "latency_ms": 5.096912384033203,
+        "confidence": 0.9616913814068508
+      },
+      {
+        "qid": "q0109",
+        "correct": true,
+        "latency_ms": 5.106925964355469,
+        "confidence": 0.7463868162243175
+      },
+      {
+        "qid": "q0110",
+        "correct": false,
+        "latency_ms": 5.115509033203125,
+        "confidence": 0.9720932443736168
+      },
+      {
+        "qid": "q0111",
+        "correct": false,
+        "latency_ms": 5.095005035400391,
+        "confidence": 0.9867958186960467
+      },
+      {
+        "qid": "q0112",
+        "correct": false,
+        "latency_ms": 5.209922790527344,
+        "confidence": 0.9215078064992686
+      },
+      {
+        "qid": "q0113",
+        "correct": false,
+        "latency_ms": 5.231380462646484,
+        "confidence": 0.8688534175006787
+      },
+      {
+        "qid": "q0114",
+        "correct": true,
+        "latency_ms": 5.241870880126953,
+        "confidence": 0.9447971619514328
+      },
+      {
+        "qid": "q0115",
+        "correct": false,
+        "latency_ms": 5.238771438598633,
+        "confidence": 0.9276494299222889
+      },
+      {
+        "qid": "q0116",
+        "correct": true,
+        "latency_ms": 5.121469497680664,
+        "confidence": 0.9495326105645607
+      },
+      {
+        "qid": "q0117",
+        "correct": true,
+        "latency_ms": 5.202054977416992,
+        "confidence": 0.7792103557222364
+      },
+      {
+        "qid": "q0118",
+        "correct": false,
+        "latency_ms": 5.122661590576172,
+        "confidence": 0.9773275109747672
+      },
+      {
+        "qid": "q0119",
+        "correct": true,
+        "latency_ms": 5.095481872558594,
+        "confidence": 0.844982490316876
+      },
+      {
+        "qid": "q0120",
+        "correct": true,
+        "latency_ms": 5.099296569824219,
+        "confidence": 0.8913209608398702
+      },
+      {
+        "qid": "q0121",
+        "correct": true,
+        "latency_ms": 5.094766616821289,
+        "confidence": 0.991819928625273
+      },
+      {
+        "qid": "q0122",
+        "correct": true,
+        "latency_ms": 5.097627639770508,
+        "confidence": 0.9782540080375416
+      },
+      {
+        "qid": "q0123",
+        "correct": false,
+        "latency_ms": 5.099773406982422,
+        "confidence": 0.9523067127509502
+      },
+      {
+        "qid": "q0124",
+        "correct": false,
+        "latency_ms": 5.095481872558594,
+        "confidence": 0.9874710229786893
+      },
+      {
+        "qid": "q0125",
+        "correct": false,
+        "latency_ms": 5.198001861572266,
+        "confidence": 0.949788047597888
+      },
+      {
+        "qid": "q0126",
+        "correct": true,
+        "latency_ms": 5.240917205810547,
+        "confidence": 0.8710200313058016
+      },
+      {
+        "qid": "q0127",
+        "correct": false,
+        "latency_ms": 5.234241485595703,
+        "confidence": 0.990847884265713
+      },
+      {
+        "qid": "q0128",
+        "correct": true,
+        "latency_ms": 5.13005256652832,
+        "confidence": 0.9974234872235999
+      },
+      {
+        "qid": "q0129",
+        "correct": false,
+        "latency_ms": 5.210161209106445,
+        "confidence": 0.9495201486078587
+      },
+      {
+        "qid": "q0130",
+        "correct": false,
+        "latency_ms": 5.119800567626953,
+        "confidence": 0.9413574200758085
+      },
+      {
+        "qid": "q0131",
+        "correct": false,
+        "latency_ms": 5.261421203613281,
+        "confidence": 0.9449450132107339
+      },
+      {
+        "qid": "q0132",
+        "correct": false,
+        "latency_ms": 5.223989486694336,
+        "confidence": 0.9580042227229432
+      },
+      {
+        "qid": "q0133",
+        "correct": false,
+        "latency_ms": 5.168437957763672,
+        "confidence": 0.9403908272970672
+      },
+      {
+        "qid": "q0134",
+        "correct": true,
+        "latency_ms": 5.203962326049805,
+        "confidence": 0.9382116265852272
+      },
+      {
+        "qid": "q0135",
+        "correct": true,
+        "latency_ms": 5.234479904174805,
+        "confidence": 0.9557616082421321
+      },
+      {
+        "qid": "q0136",
+        "correct": true,
+        "latency_ms": 5.118608474731445,
+        "confidence": 0.8756401121257871
+      },
+      {
+        "qid": "q0137",
+        "correct": false,
+        "latency_ms": 5.101919174194336,
+        "confidence": 0.9452976437314561
+      },
+      {
+        "qid": "q0138",
+        "correct": false,
+        "latency_ms": 5.22923469543457,
+        "confidence": 0.984312422520035
+      },
+      {
+        "qid": "q0139",
+        "correct": true,
+        "latency_ms": 5.2318572998046875,
+        "confidence": 0.938657797635565
+      },
+      {
+        "qid": "q0140",
+        "correct": false,
+        "latency_ms": 5.126953125,
+        "confidence": 0.949678675683002
+      },
+      {
+        "qid": "q0141",
+        "correct": false,
+        "latency_ms": 5.208492279052734,
+        "confidence": 0.9985430308431146
+      },
+      {
+        "qid": "q0142",
+        "correct": false,
+        "latency_ms": 5.22923469543457,
+        "confidence": 0.9001623872580004
+      },
+      {
+        "qid": "q0143",
+        "correct": false,
+        "latency_ms": 5.167722702026367,
+        "confidence": 0.817800141474185
+      },
+      {
+        "qid": "q0144",
+        "correct": true,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9533545024290262
+      },
+      {
+        "qid": "q0145",
+        "correct": false,
+        "latency_ms": 5.095481872558594,
+        "confidence": 0.9872466462948367
+      },
+      {
+        "qid": "q0146",
+        "correct": true,
+        "latency_ms": 5.094051361083984,
+        "confidence": 0.9307758895495979
+      },
+      {
+        "qid": "q0147",
+        "correct": false,
+        "latency_ms": 5.096673965454102,
+        "confidence": 0.835192553154071
+      },
+      {
+        "qid": "q0148",
+        "correct": true,
+        "latency_ms": 5.21397590637207,
+        "confidence": 0.9489790400709648
+      },
+      {
+        "qid": "q0149",
+        "correct": true,
+        "latency_ms": 5.226373672485352,
+        "confidence": 0.948625114475778
+      },
+      {
+        "qid": "q0150",
+        "correct": false,
+        "latency_ms": 5.129337310791016,
+        "confidence": 0.8716629944357835
+      },
+      {
+        "qid": "q0151",
+        "correct": true,
+        "latency_ms": 5.246877670288086,
+        "confidence": 0.9084793138066299
+      },
+      {
+        "qid": "q0152",
+        "correct": false,
+        "latency_ms": 5.124568939208984,
+        "confidence": 0.9551472373193942
+      },
+      {
+        "qid": "q0153",
+        "correct": false,
+        "latency_ms": 5.104541778564453,
+        "confidence": 0.920869485728258
+      },
+      {
+        "qid": "q0154",
+        "correct": false,
+        "latency_ms": 5.281209945678711,
+        "confidence": 0.9455993400800832
+      },
+      {
+        "qid": "q0155",
+        "correct": false,
+        "latency_ms": 5.164861679077148,
+        "confidence": 0.8783437492009086
+      },
+      {
+        "qid": "q0156",
+        "correct": false,
+        "latency_ms": 5.116939544677734,
+        "confidence": 0.9998815592294843
+      },
+      {
+        "qid": "q0157",
+        "correct": true,
+        "latency_ms": 5.095481872558594,
+        "confidence": 0.8989832886934327
+      },
+      {
+        "qid": "q0158",
+        "correct": false,
+        "latency_ms": 5.101680755615234,
+        "confidence": 0.9136944836857255
+      },
+      {
+        "qid": "q0159",
+        "correct": false,
+        "latency_ms": 5.103588104248047,
+        "confidence": 0.9660506851714608
+      },
+      {
+        "qid": "q0160",
+        "correct": true,
+        "latency_ms": 5.217552185058594,
+        "confidence": 0.9994715689996447
+      },
+      {
+        "qid": "q0161",
+        "correct": true,
+        "latency_ms": 5.223989486694336,
+        "confidence": 0.8990171958706873
+      },
+      {
+        "qid": "q0162",
+        "correct": false,
+        "latency_ms": 5.227804183959961,
+        "confidence": 0.9641190068878396
+      },
+      {
+        "qid": "q0163",
+        "correct": false,
+        "latency_ms": 5.233049392700195,
+        "confidence": 0.9245643176497426
+      },
+      {
+        "qid": "q0164",
+        "correct": false,
+        "latency_ms": 5.231380462646484,
+        "confidence": 0.9960381602092927
+      },
+      {
+        "qid": "q0165",
+        "correct": false,
+        "latency_ms": 5.117893218994141,
+        "confidence": 0.9573376868488813
+      },
+      {
+        "qid": "q0166",
+        "correct": true,
+        "latency_ms": 5.215644836425781,
+        "confidence": 0.9292477294364978
+      },
+      {
+        "qid": "q0167",
+        "correct": true,
+        "latency_ms": 5.23686408996582,
+        "confidence": 0.8840183616873487
+      },
+      {
+        "qid": "q0168",
+        "correct": true,
+        "latency_ms": 5.11932373046875,
+        "confidence": 0.9529354714467446
+      },
+      {
+        "qid": "q0169",
+        "correct": true,
+        "latency_ms": 5.097866058349609,
+        "confidence": 0.9903255250876652
+      },
+      {
+        "qid": "q0170",
+        "correct": false,
+        "latency_ms": 5.098104476928711,
+        "confidence": 0.9845441038891614
+      },
+      {
+        "qid": "q0171",
+        "correct": false,
+        "latency_ms": 5.098104476928711,
+        "confidence": 0.9958559900991514
+      },
+      {
+        "qid": "q0172",
+        "correct": false,
+        "latency_ms": 5.099058151245117,
+        "confidence": 0.9355380451790102
+      },
+      {
+        "qid": "q0173",
+        "correct": false,
+        "latency_ms": 5.0945281982421875,
+        "confidence": 0.9817212113250201
+      },
+      {
+        "qid": "q0174",
+        "correct": false,
+        "latency_ms": 5.213499069213867,
+        "confidence": 0.8924116221231707
+      },
+      {
+        "qid": "q0175",
+        "correct": false,
+        "latency_ms": 5.118846893310547,
+        "confidence": 0.9227317956018974
+      },
+      {
+        "qid": "q0176",
+        "correct": true,
+        "latency_ms": 5.107879638671875,
+        "confidence": 0.9551467140557989
+      },
+      {
+        "qid": "q0177",
+        "correct": true,
+        "latency_ms": 5.097150802612305,
+        "confidence": 0.9241142028402831
+      },
+      {
+        "qid": "q0178",
+        "correct": false,
+        "latency_ms": 5.097389221191406,
+        "confidence": 0.9294838443573096
+      },
+      {
+        "qid": "q0179",
+        "correct": true,
+        "latency_ms": 5.249261856079102,
+        "confidence": 0.8806601520979686
+      },
+      {
+        "qid": "q0180",
+        "correct": false,
+        "latency_ms": 5.116701126098633,
+        "confidence": 0.9530414373426318
+      },
+      {
+        "qid": "q0181",
+        "correct": true,
+        "latency_ms": 5.209207534790039,
+        "confidence": 0.9510844493245979
+      },
+      {
+        "qid": "q0182",
+        "correct": false,
+        "latency_ms": 5.235433578491211,
+        "confidence": 0.9312391241860541
+      },
+      {
+        "qid": "q0183",
+        "correct": true,
+        "latency_ms": 5.226850509643555,
+        "confidence": 0.8854819106332432
+      },
+      {
+        "qid": "q0184",
+        "correct": false,
+        "latency_ms": 5.153417587280273,
+        "confidence": 0.9469041224934578
+      },
+      {
+        "qid": "q0185",
+        "correct": false,
+        "latency_ms": 5.095481872558594,
+        "confidence": 0.9358922257968159
+      },
+      {
+        "qid": "q0186",
+        "correct": true,
+        "latency_ms": 5.101442337036133,
+        "confidence": 0.8700657873291457
+      },
+      {
+        "qid": "q0187",
+        "correct": false,
+        "latency_ms": 5.100727081298828,
+        "confidence": 0.9930565899841893
+      },
+      {
+        "qid": "q0188",
+        "correct": true,
+        "latency_ms": 5.096673965454102,
+        "confidence": 0.9885276909761492
+      },
+      {
+        "qid": "q0189",
+        "correct": false,
+        "latency_ms": 5.130767822265625,
+        "confidence": 0.9800413246136939
+      },
+      {
+        "qid": "q0190",
+        "correct": false,
+        "latency_ms": 5.119085311889648,
+        "confidence": 0.8909785594776133
+      },
+      {
+        "qid": "q0191",
+        "correct": false,
+        "latency_ms": 5.109071731567383,
+        "confidence": 0.9841697219657126
+      },
+      {
+        "qid": "q0192",
+        "correct": true,
+        "latency_ms": 5.251884460449219,
+        "confidence": 0.8346801882039625
+      },
+      {
+        "qid": "q0193",
+        "correct": true,
+        "latency_ms": 5.260705947875977,
+        "confidence": 0.9730998920020686
+      },
+      {
+        "qid": "q0194",
+        "correct": false,
+        "latency_ms": 5.124330520629883,
+        "confidence": 0.9283213646369055
+      },
+      {
+        "qid": "q0195",
+        "correct": true,
+        "latency_ms": 5.141973495483398,
+        "confidence": 0.8915307555365404
+      },
+      {
+        "qid": "q0196",
+        "correct": false,
+        "latency_ms": 5.214214324951172,
+        "confidence": 0.9451890595499945
+      },
+      {
+        "qid": "q0197",
+        "correct": true,
+        "latency_ms": 5.11932373046875,
+        "confidence": 0.9768757495537315
+      },
+      {
+        "qid": "q0198",
+        "correct": false,
+        "latency_ms": 5.207300186157227,
+        "confidence": 0.8932669717646426
+      },
+      {
+        "qid": "q0199",
+        "correct": false,
+        "latency_ms": 5.117893218994141,
+        "confidence": 0.9350812838247559
+      }
+    ],
+    "S2_mesh_p2p": [
+      {
+        "qid": "q0000",
+        "correct": true,
+        "latency_ms": 84.24639701843262,
+        "consensus_pick": "Sports_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0001",
+        "correct": true,
+        "latency_ms": 90.0261402130127,
+        "consensus_pick": "Shopping_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0002",
+        "correct": true,
+        "latency_ms": 114.43853378295898,
+        "consensus_pick": "Music_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0003",
+        "correct": true,
+        "latency_ms": 90.13772010803223,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0004",
+        "correct": true,
+        "latency_ms": 130.15389442443848,
+        "consensus_pick": "Agriculture_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0005",
+        "correct": true,
+        "latency_ms": 116.68276786804199,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0006",
+        "correct": true,
+        "latency_ms": 110.93282699584961,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0007",
+        "correct": true,
+        "latency_ms": 106.41217231750488,
+        "consensus_pick": "Finance_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0008",
+        "correct": true,
+        "latency_ms": 116.77837371826172,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0009",
+        "correct": true,
+        "latency_ms": 114.4096851348877,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0010",
+        "correct": true,
+        "latency_ms": 91.83120727539062,
+        "consensus_pick": "Finance_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0011",
+        "correct": true,
+        "latency_ms": 100.88109970092773,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0012",
+        "correct": true,
+        "latency_ms": 118.91055107116699,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0013",
+        "correct": true,
+        "latency_ms": 123.12698364257812,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0014",
+        "correct": true,
+        "latency_ms": 117.22469329833984,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0015",
+        "correct": true,
+        "latency_ms": 107.6211929321289,
+        "consensus_pick": "Energy_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0016",
+        "correct": true,
+        "latency_ms": 106.41121864318848,
+        "consensus_pick": "Movies_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0017",
+        "correct": true,
+        "latency_ms": 118.57008934020996,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0018",
+        "correct": true,
+        "latency_ms": 97.93591499328613,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0019",
+        "correct": true,
+        "latency_ms": 82.79585838317871,
+        "consensus_pick": "Energy_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0020",
+        "correct": true,
+        "latency_ms": 103.25956344604492,
+        "consensus_pick": "Education_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0021",
+        "correct": true,
+        "latency_ms": 123.86226654052734,
+        "consensus_pick": "Travel_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0022",
+        "correct": true,
+        "latency_ms": 121.84786796569824,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0023",
+        "correct": true,
+        "latency_ms": 108.9482307434082,
+        "consensus_pick": "Education_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0024",
+        "correct": true,
+        "latency_ms": 114.87102508544922,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0025",
+        "correct": true,
+        "latency_ms": 123.84605407714844,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0026",
+        "correct": true,
+        "latency_ms": 110.50295829772949,
+        "consensus_pick": "Government_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0027",
+        "correct": true,
+        "latency_ms": 104.10523414611816,
+        "consensus_pick": "Health_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0028",
+        "correct": true,
+        "latency_ms": 120.70083618164062,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0029",
+        "correct": true,
+        "latency_ms": 95.78990936279297,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0030",
+        "correct": true,
+        "latency_ms": 110.52846908569336,
+        "consensus_pick": "Health_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0031",
+        "correct": true,
+        "latency_ms": 112.03289031982422,
+        "consensus_pick": "Health_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0032",
+        "correct": true,
+        "latency_ms": 88.57989311218262,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0033",
+        "correct": true,
+        "latency_ms": 100.04043579101562,
+        "consensus_pick": "Music_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0034",
+        "correct": true,
+        "latency_ms": 114.26377296447754,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0035",
+        "correct": true,
+        "latency_ms": 91.46738052368164,
+        "consensus_pick": "Maps_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0036",
+        "correct": true,
+        "latency_ms": 85.76393127441406,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0037",
+        "correct": true,
+        "latency_ms": 97.85032272338867,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0038",
+        "correct": true,
+        "latency_ms": 93.77813339233398,
+        "consensus_pick": "Food_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0039",
+        "correct": true,
+        "latency_ms": 110.02135276794434,
+        "consensus_pick": "Science_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0040",
+        "correct": true,
+        "latency_ms": 99.35307502746582,
+        "consensus_pick": "Government_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0041",
+        "correct": true,
+        "latency_ms": 102.78701782226562,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0042",
+        "correct": true,
+        "latency_ms": 87.5091552734375,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0043",
+        "correct": true,
+        "latency_ms": 131.53433799743652,
+        "consensus_pick": "Agriculture_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0044",
+        "correct": true,
+        "latency_ms": 108.41679573059082,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0045",
+        "correct": true,
+        "latency_ms": 104.37273979187012,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0046",
+        "correct": true,
+        "latency_ms": 120.6052303314209,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0047",
+        "correct": true,
+        "latency_ms": 114.54534530639648,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0048",
+        "correct": true,
+        "latency_ms": 99.99895095825195,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0049",
+        "correct": true,
+        "latency_ms": 95.53647041320801,
+        "consensus_pick": "Weather_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0050",
+        "correct": true,
+        "latency_ms": 101.81713104248047,
+        "consensus_pick": "Energy_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0051",
+        "correct": true,
+        "latency_ms": 78.19414138793945,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0052",
+        "correct": true,
+        "latency_ms": 101.06706619262695,
+        "consensus_pick": "Sports_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0053",
+        "correct": true,
+        "latency_ms": 113.56592178344727,
+        "consensus_pick": "Food_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0054",
+        "correct": true,
+        "latency_ms": 107.81002044677734,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0055",
+        "correct": true,
+        "latency_ms": 106.79173469543457,
+        "consensus_pick": "Health_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0056",
+        "correct": true,
+        "latency_ms": 104.25019264221191,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0057",
+        "correct": true,
+        "latency_ms": 108.73699188232422,
+        "consensus_pick": "Health_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0058",
+        "correct": true,
+        "latency_ms": 92.57984161376953,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0059",
+        "correct": true,
+        "latency_ms": 100.45385360717773,
+        "consensus_pick": "News_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0060",
+        "correct": true,
+        "latency_ms": 88.14215660095215,
+        "consensus_pick": "Health_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0061",
+        "correct": true,
+        "latency_ms": 88.14692497253418,
+        "consensus_pick": "Food_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0062",
+        "correct": true,
+        "latency_ms": 103.71017456054688,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0063",
+        "correct": true,
+        "latency_ms": 108.90388488769531,
+        "consensus_pick": "Movies_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0064",
+        "correct": true,
+        "latency_ms": 107.93948173522949,
+        "consensus_pick": "Music_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0065",
+        "correct": true,
+        "latency_ms": 102.58674621582031,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0066",
+        "correct": true,
+        "latency_ms": 110.1682186126709,
+        "consensus_pick": "Weather_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0067",
+        "correct": true,
+        "latency_ms": 103.86848449707031,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0068",
+        "correct": true,
+        "latency_ms": 117.45858192443848,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0069",
+        "correct": true,
+        "latency_ms": 95.98970413208008,
+        "consensus_pick": "Health_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0070",
+        "correct": true,
+        "latency_ms": 108.37244987487793,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0071",
+        "correct": true,
+        "latency_ms": 86.02476119995117,
+        "consensus_pick": "Travel_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0072",
+        "correct": true,
+        "latency_ms": 100.82316398620605,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0073",
+        "correct": true,
+        "latency_ms": 90.83414077758789,
+        "consensus_pick": "Government_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0074",
+        "correct": true,
+        "latency_ms": 100.03805160522461,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0075",
+        "correct": true,
+        "latency_ms": 109.58528518676758,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0076",
+        "correct": true,
+        "latency_ms": 93.36376190185547,
+        "consensus_pick": "Food_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0077",
+        "correct": true,
+        "latency_ms": 126.10125541687012,
+        "consensus_pick": "Music_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0078",
+        "correct": true,
+        "latency_ms": 115.84591865539551,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0079",
+        "correct": true,
+        "latency_ms": 116.91784858703613,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0080",
+        "correct": true,
+        "latency_ms": 106.53352737426758,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0081",
+        "correct": true,
+        "latency_ms": 120.28264999389648,
+        "consensus_pick": "Food_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0082",
+        "correct": true,
+        "latency_ms": 96.19951248168945,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0083",
+        "correct": true,
+        "latency_ms": 131.9258213043213,
+        "consensus_pick": "Science_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0084",
+        "correct": true,
+        "latency_ms": 116.16158485412598,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0085",
+        "correct": true,
+        "latency_ms": 110.44049263000488,
+        "consensus_pick": "Music_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0086",
+        "correct": true,
+        "latency_ms": 102.19049453735352,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0087",
+        "correct": true,
+        "latency_ms": 101.84144973754883,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0088",
+        "correct": true,
+        "latency_ms": 90.21759033203125,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0089",
+        "correct": true,
+        "latency_ms": 92.58008003234863,
+        "consensus_pick": "Agriculture_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0090",
+        "correct": true,
+        "latency_ms": 93.89901161193848,
+        "consensus_pick": "Government_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0091",
+        "correct": true,
+        "latency_ms": 96.03357315063477,
+        "consensus_pick": "Sports_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0092",
+        "correct": true,
+        "latency_ms": 105.34191131591797,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0093",
+        "correct": true,
+        "latency_ms": 98.19817543029785,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0094",
+        "correct": true,
+        "latency_ms": 103.79672050476074,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0095",
+        "correct": true,
+        "latency_ms": 101.46546363830566,
+        "consensus_pick": "Government_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0096",
+        "correct": true,
+        "latency_ms": 101.20296478271484,
+        "consensus_pick": "Agriculture_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0097",
+        "correct": true,
+        "latency_ms": 91.93754196166992,
+        "consensus_pick": "Shopping_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0098",
+        "correct": true,
+        "latency_ms": 134.77826118469238,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0099",
+        "correct": true,
+        "latency_ms": 102.38909721374512,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0100",
+        "correct": true,
+        "latency_ms": 117.80166625976562,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0101",
+        "correct": true,
+        "latency_ms": 102.08439826965332,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0102",
+        "correct": true,
+        "latency_ms": 108.39462280273438,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0103",
+        "correct": true,
+        "latency_ms": 115.39173126220703,
+        "consensus_pick": "Science_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0104",
+        "correct": true,
+        "latency_ms": 92.63253211975098,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0105",
+        "correct": false,
+        "latency_ms": 101.79948806762695,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0106",
+        "correct": true,
+        "latency_ms": 109.91883277893066,
+        "consensus_pick": "Energy_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0107",
+        "correct": true,
+        "latency_ms": 96.80938720703125,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0108",
+        "correct": true,
+        "latency_ms": 98.39534759521484,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0109",
+        "correct": true,
+        "latency_ms": 104.4166088104248,
+        "consensus_pick": "Agriculture_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0110",
+        "correct": true,
+        "latency_ms": 100.19373893737793,
+        "consensus_pick": "News_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0111",
+        "correct": true,
+        "latency_ms": 104.03180122375488,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0112",
+        "correct": true,
+        "latency_ms": 88.0270004272461,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0113",
+        "correct": true,
+        "latency_ms": 128.2501220703125,
+        "consensus_pick": "Food_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0114",
+        "correct": true,
+        "latency_ms": 103.21378707885742,
+        "consensus_pick": "Maps_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0115",
+        "correct": true,
+        "latency_ms": 127.03967094421387,
+        "consensus_pick": "Health_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0116",
+        "correct": true,
+        "latency_ms": 91.02201461791992,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0117",
+        "correct": true,
+        "latency_ms": 88.95516395568848,
+        "consensus_pick": "Weather_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0118",
+        "correct": true,
+        "latency_ms": 104.81929779052734,
+        "consensus_pick": "Music_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0119",
+        "correct": true,
+        "latency_ms": 101.35984420776367,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0120",
+        "correct": true,
+        "latency_ms": 96.49038314819336,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0121",
+        "correct": true,
+        "latency_ms": 82.94486999511719,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0122",
+        "correct": true,
+        "latency_ms": 94.57898139953613,
+        "consensus_pick": "Shopping_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0123",
+        "correct": true,
+        "latency_ms": 114.5625114440918,
+        "consensus_pick": "Food_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0124",
+        "correct": true,
+        "latency_ms": 112.87069320678711,
+        "consensus_pick": "Shopping_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0125",
+        "correct": true,
+        "latency_ms": 98.0980396270752,
+        "consensus_pick": "News_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0126",
+        "correct": true,
+        "latency_ms": 102.6451587677002,
+        "consensus_pick": "Government_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0127",
+        "correct": true,
+        "latency_ms": 98.64592552185059,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0128",
+        "correct": true,
+        "latency_ms": 117.06876754760742,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0129",
+        "correct": true,
+        "latency_ms": 95.3984260559082,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0130",
+        "correct": true,
+        "latency_ms": 111.21535301208496,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0131",
+        "correct": false,
+        "latency_ms": 101.46093368530273,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0132",
+        "correct": true,
+        "latency_ms": 105.55171966552734,
+        "consensus_pick": "Music_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0133",
+        "correct": true,
+        "latency_ms": 105.08966445922852,
+        "consensus_pick": "Education_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0134",
+        "correct": true,
+        "latency_ms": 111.3424301147461,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0135",
+        "correct": true,
+        "latency_ms": 113.67011070251465,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0136",
+        "correct": true,
+        "latency_ms": 115.3724193572998,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0137",
+        "correct": true,
+        "latency_ms": 106.09984397888184,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0138",
+        "correct": true,
+        "latency_ms": 101.84550285339355,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0139",
+        "correct": true,
+        "latency_ms": 102.07152366638184,
+        "consensus_pick": "Shopping_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0140",
+        "correct": true,
+        "latency_ms": 105.24463653564453,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0141",
+        "correct": true,
+        "latency_ms": 85.89816093444824,
+        "consensus_pick": "Travel_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0142",
+        "correct": true,
+        "latency_ms": 117.74921417236328,
+        "consensus_pick": "Science_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0143",
+        "correct": true,
+        "latency_ms": 101.7458438873291,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0144",
+        "correct": true,
+        "latency_ms": 108.91866683959961,
+        "consensus_pick": "Agriculture_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0145",
+        "correct": true,
+        "latency_ms": 97.3670482635498,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0146",
+        "correct": true,
+        "latency_ms": 95.5495834350586,
+        "consensus_pick": "Food_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0147",
+        "correct": true,
+        "latency_ms": 98.7401008605957,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0148",
+        "correct": true,
+        "latency_ms": 105.25822639465332,
+        "consensus_pick": "Government_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0149",
+        "correct": true,
+        "latency_ms": 113.33727836608887,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0150",
+        "correct": true,
+        "latency_ms": 112.36953735351562,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0151",
+        "correct": false,
+        "latency_ms": 103.11412811279297,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0152",
+        "correct": false,
+        "latency_ms": 101.27997398376465,
+        "consensus_pick": "News_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0153",
+        "correct": true,
+        "latency_ms": 111.77468299865723,
+        "consensus_pick": "News_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0154",
+        "correct": true,
+        "latency_ms": 77.2402286529541,
+        "consensus_pick": "Education_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0155",
+        "correct": true,
+        "latency_ms": 85.52718162536621,
+        "consensus_pick": "Maps_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0156",
+        "correct": true,
+        "latency_ms": 110.5492115020752,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0157",
+        "correct": true,
+        "latency_ms": 110.14866828918457,
+        "consensus_pick": "Sports_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0158",
+        "correct": true,
+        "latency_ms": 95.12782096862793,
+        "consensus_pick": "Agriculture_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0159",
+        "correct": true,
+        "latency_ms": 91.13168716430664,
+        "consensus_pick": "Music_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0160",
+        "correct": true,
+        "latency_ms": 117.93923377990723,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0161",
+        "correct": true,
+        "latency_ms": 103.05166244506836,
+        "consensus_pick": "Finance_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0162",
+        "correct": true,
+        "latency_ms": 109.10582542419434,
+        "consensus_pick": "Food_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0163",
+        "correct": true,
+        "latency_ms": 122.86972999572754,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0164",
+        "correct": false,
+        "latency_ms": 90.18063545227051,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0165",
+        "correct": true,
+        "latency_ms": 90.13199806213379,
+        "consensus_pick": "Energy_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0166",
+        "correct": true,
+        "latency_ms": 105.12590408325195,
+        "consensus_pick": "Science_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0167",
+        "correct": true,
+        "latency_ms": 90.14058113098145,
+        "consensus_pick": "Travel_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0168",
+        "correct": true,
+        "latency_ms": 95.8857536315918,
+        "consensus_pick": "Movies_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0169",
+        "correct": true,
+        "latency_ms": 100.1424789428711,
+        "consensus_pick": "Music_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0170",
+        "correct": true,
+        "latency_ms": 98.1588363647461,
+        "consensus_pick": "Finance_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0171",
+        "correct": true,
+        "latency_ms": 91.38154983520508,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0172",
+        "correct": true,
+        "latency_ms": 108.64925384521484,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0173",
+        "correct": true,
+        "latency_ms": 110.72540283203125,
+        "consensus_pick": "Shopping_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0174",
+        "correct": true,
+        "latency_ms": 109.15255546569824,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0175",
+        "correct": true,
+        "latency_ms": 102.2942066192627,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0176",
+        "correct": true,
+        "latency_ms": 103.57308387756348,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0177",
+        "correct": true,
+        "latency_ms": 114.0892505645752,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0178",
+        "correct": true,
+        "latency_ms": 115.18263816833496,
+        "consensus_pick": "Sports_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0179",
+        "correct": true,
+        "latency_ms": 94.8951244354248,
+        "consensus_pick": "Movies_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0180",
+        "correct": true,
+        "latency_ms": 101.76491737365723,
+        "consensus_pick": "Agriculture_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0181",
+        "correct": true,
+        "latency_ms": 86.0586166381836,
+        "consensus_pick": "Energy_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0182",
+        "correct": true,
+        "latency_ms": 116.11533164978027,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0183",
+        "correct": true,
+        "latency_ms": 115.04459381103516,
+        "consensus_pick": "Agriculture_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0184",
+        "correct": true,
+        "latency_ms": 97.06592559814453,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0185",
+        "correct": true,
+        "latency_ms": 92.76866912841797,
+        "consensus_pick": "Agriculture_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0186",
+        "correct": true,
+        "latency_ms": 115.6001091003418,
+        "consensus_pick": "Food_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0187",
+        "correct": true,
+        "latency_ms": 102.52618789672852,
+        "consensus_pick": "Sports_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0188",
+        "correct": true,
+        "latency_ms": 115.04840850830078,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0189",
+        "correct": true,
+        "latency_ms": 86.40170097351074,
+        "consensus_pick": "Food_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0190",
+        "correct": true,
+        "latency_ms": 96.53878211975098,
+        "consensus_pick": "Education_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0191",
+        "correct": true,
+        "latency_ms": 116.0581111907959,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0192",
+        "correct": true,
+        "latency_ms": 103.03664207458496,
+        "consensus_pick": "Energy_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0193",
+        "correct": true,
+        "latency_ms": 92.30613708496094,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0194",
+        "correct": true,
+        "latency_ms": 106.39405250549316,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0195",
+        "correct": true,
+        "latency_ms": 102.46944427490234,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0196",
+        "correct": true,
+        "latency_ms": 105.8812141418457,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0197",
+        "correct": true,
+        "latency_ms": 98.66571426391602,
+        "consensus_pick": "Government_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0198",
+        "correct": true,
+        "latency_ms": 101.21560096740723,
+        "consensus_pick": "Government_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0199",
+        "correct": true,
+        "latency_ms": 98.74606132507324,
+        "consensus_pick": "Science_API_2",
+        "replicas": 3
+      }
+    ],
+    "S3_mesh_2_failed": [
+      {
+        "qid": "q0000",
+        "correct": true,
+        "latency_ms": 66.51163101196289,
+        "consensus_pick": "Sports_API_0",
+        "replicas": 1
+      },
+      {
+        "qid": "q0001",
+        "correct": true,
+        "latency_ms": 61.464786529541016,
+        "consensus_pick": "Shopping_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0002",
+        "correct": true,
+        "latency_ms": 61.01655960083008,
+        "consensus_pick": "Music_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0003",
+        "correct": true,
+        "latency_ms": 62.35814094543457,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0004",
+        "correct": true,
+        "latency_ms": 47.489166259765625,
+        "consensus_pick": "Agriculture_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0005",
+        "correct": true,
+        "latency_ms": 58.50672721862793,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0006",
+        "correct": true,
+        "latency_ms": 55.64594268798828,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0007",
+        "correct": true,
+        "latency_ms": 59.63277816772461,
+        "consensus_pick": "Finance_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0008",
+        "correct": true,
+        "latency_ms": 56.499481201171875,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0009",
+        "correct": false,
+        "latency_ms": 61.859130859375,
+        "consensus_pick": "Government_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0010",
+        "correct": true,
+        "latency_ms": 52.661895751953125,
+        "consensus_pick": "Finance_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0011",
+        "correct": true,
+        "latency_ms": 59.26918983459473,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0012",
+        "correct": true,
+        "latency_ms": 69.69475746154785,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0013",
+        "correct": true,
+        "latency_ms": 69.31257247924805,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0014",
+        "correct": true,
+        "latency_ms": 62.37196922302246,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0015",
+        "correct": true,
+        "latency_ms": 67.46816635131836,
+        "consensus_pick": "Energy_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0016",
+        "correct": true,
+        "latency_ms": 62.17217445373535,
+        "consensus_pick": "Movies_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0017",
+        "correct": true,
+        "latency_ms": 59.1275691986084,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0018",
+        "correct": true,
+        "latency_ms": 63.686370849609375,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0019",
+        "correct": true,
+        "latency_ms": 63.52543830871582,
+        "consensus_pick": "Energy_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0020",
+        "correct": true,
+        "latency_ms": 56.15377426147461,
+        "consensus_pick": "Education_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0021",
+        "correct": true,
+        "latency_ms": 48.362016677856445,
+        "consensus_pick": "Travel_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0022",
+        "correct": true,
+        "latency_ms": 64.82315063476562,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0023",
+        "correct": true,
+        "latency_ms": 56.94723129272461,
+        "consensus_pick": "Education_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0024",
+        "correct": true,
+        "latency_ms": 57.832956314086914,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0025",
+        "correct": true,
+        "latency_ms": 58.35461616516113,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0026",
+        "correct": true,
+        "latency_ms": 57.18684196472168,
+        "consensus_pick": "Government_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0027",
+        "correct": true,
+        "latency_ms": 48.38824272155762,
+        "consensus_pick": "Health_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0028",
+        "correct": true,
+        "latency_ms": 54.49223518371582,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0029",
+        "correct": true,
+        "latency_ms": 47.27578163146973,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0030",
+        "correct": true,
+        "latency_ms": 49.997568130493164,
+        "consensus_pick": "Health_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0031",
+        "correct": true,
+        "latency_ms": 60.72807312011719,
+        "consensus_pick": "Health_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0032",
+        "correct": true,
+        "latency_ms": 62.31570243835449,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0033",
+        "correct": true,
+        "latency_ms": 53.80415916442871,
+        "consensus_pick": "Music_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0034",
+        "correct": true,
+        "latency_ms": 51.48625373840332,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0035",
+        "correct": true,
+        "latency_ms": 54.44645881652832,
+        "consensus_pick": "Maps_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0036",
+        "correct": true,
+        "latency_ms": 51.75185203552246,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0037",
+        "correct": true,
+        "latency_ms": 59.729576110839844,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0038",
+        "correct": false,
+        "latency_ms": 65.27495384216309,
+        "consensus_pick": "Food_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0039",
+        "correct": true,
+        "latency_ms": 68.53365898132324,
+        "consensus_pick": "Science_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0040",
+        "correct": true,
+        "latency_ms": 53.27272415161133,
+        "consensus_pick": "Government_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0041",
+        "correct": true,
+        "latency_ms": 65.17386436462402,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0042",
+        "correct": true,
+        "latency_ms": 48.8123893737793,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0043",
+        "correct": true,
+        "latency_ms": 59.59582328796387,
+        "consensus_pick": "Agriculture_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0044",
+        "correct": true,
+        "latency_ms": 73.10605049133301,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0045",
+        "correct": true,
+        "latency_ms": 57.721614837646484,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0046",
+        "correct": true,
+        "latency_ms": 53.350210189819336,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0047",
+        "correct": false,
+        "latency_ms": 47.96862602233887,
+        "consensus_pick": "Sports_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0048",
+        "correct": true,
+        "latency_ms": 54.730892181396484,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0049",
+        "correct": true,
+        "latency_ms": 54.11958694458008,
+        "consensus_pick": "Weather_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0050",
+        "correct": true,
+        "latency_ms": 54.4736385345459,
+        "consensus_pick": "Energy_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0051",
+        "correct": true,
+        "latency_ms": 57.96957015991211,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0052",
+        "correct": true,
+        "latency_ms": 57.00254440307617,
+        "consensus_pick": "Sports_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0053",
+        "correct": true,
+        "latency_ms": 51.05304718017578,
+        "consensus_pick": "Food_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0054",
+        "correct": true,
+        "latency_ms": 53.60746383666992,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0055",
+        "correct": true,
+        "latency_ms": 57.372331619262695,
+        "consensus_pick": "Health_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0056",
+        "correct": true,
+        "latency_ms": 52.27041244506836,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0057",
+        "correct": true,
+        "latency_ms": 56.05769157409668,
+        "consensus_pick": "Health_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0058",
+        "correct": true,
+        "latency_ms": 73.38929176330566,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0059",
+        "correct": true,
+        "latency_ms": 57.12151527404785,
+        "consensus_pick": "News_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0060",
+        "correct": true,
+        "latency_ms": 51.02682113647461,
+        "consensus_pick": "Health_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0061",
+        "correct": true,
+        "latency_ms": 52.8562068939209,
+        "consensus_pick": "Food_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0062",
+        "correct": true,
+        "latency_ms": 54.65388298034668,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0063",
+        "correct": true,
+        "latency_ms": 71.06661796569824,
+        "consensus_pick": "Movies_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0064",
+        "correct": true,
+        "latency_ms": 58.884382247924805,
+        "consensus_pick": "Music_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0065",
+        "correct": false,
+        "latency_ms": 70.24335861206055,
+        "consensus_pick": "Music_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0066",
+        "correct": true,
+        "latency_ms": 62.85667419433594,
+        "consensus_pick": "Weather_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0067",
+        "correct": true,
+        "latency_ms": 53.731679916381836,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0068",
+        "correct": true,
+        "latency_ms": 46.21744155883789,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0069",
+        "correct": true,
+        "latency_ms": 58.55727195739746,
+        "consensus_pick": "Health_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0070",
+        "correct": true,
+        "latency_ms": 60.48440933227539,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0071",
+        "correct": true,
+        "latency_ms": 59.9668025970459,
+        "consensus_pick": "Travel_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0072",
+        "correct": true,
+        "latency_ms": 47.25217819213867,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0073",
+        "correct": true,
+        "latency_ms": 59.867143630981445,
+        "consensus_pick": "Government_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0074",
+        "correct": true,
+        "latency_ms": 59.50450897216797,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0075",
+        "correct": true,
+        "latency_ms": 52.176713943481445,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0076",
+        "correct": true,
+        "latency_ms": 47.47629165649414,
+        "consensus_pick": "Food_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0077",
+        "correct": true,
+        "latency_ms": 67.26217269897461,
+        "consensus_pick": "Music_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0078",
+        "correct": true,
+        "latency_ms": 62.036752700805664,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0079",
+        "correct": true,
+        "latency_ms": 54.584503173828125,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0080",
+        "correct": true,
+        "latency_ms": 64.46957588195801,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0081",
+        "correct": true,
+        "latency_ms": 50.90689659118652,
+        "consensus_pick": "Food_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0082",
+        "correct": true,
+        "latency_ms": 67.87896156311035,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0083",
+        "correct": true,
+        "latency_ms": 52.793264389038086,
+        "consensus_pick": "Science_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0084",
+        "correct": true,
+        "latency_ms": 62.77060508728027,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0085",
+        "correct": true,
+        "latency_ms": 56.34570121765137,
+        "consensus_pick": "Music_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0086",
+        "correct": true,
+        "latency_ms": 82.46278762817383,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0087",
+        "correct": true,
+        "latency_ms": 72.99518585205078,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0088",
+        "correct": true,
+        "latency_ms": 68.26162338256836,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0089",
+        "correct": true,
+        "latency_ms": 60.16945838928223,
+        "consensus_pick": "Agriculture_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0090",
+        "correct": true,
+        "latency_ms": 58.18629264831543,
+        "consensus_pick": "Government_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0091",
+        "correct": true,
+        "latency_ms": 43.20669174194336,
+        "consensus_pick": "Sports_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0092",
+        "correct": true,
+        "latency_ms": 59.53049659729004,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0093",
+        "correct": true,
+        "latency_ms": 74.29814338684082,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0094",
+        "correct": true,
+        "latency_ms": 59.334516525268555,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0095",
+        "correct": true,
+        "latency_ms": 50.37117004394531,
+        "consensus_pick": "Government_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0096",
+        "correct": true,
+        "latency_ms": 51.717519760131836,
+        "consensus_pick": "Agriculture_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0097",
+        "correct": true,
+        "latency_ms": 61.631202697753906,
+        "consensus_pick": "Shopping_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0098",
+        "correct": true,
+        "latency_ms": 56.26082420349121,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0099",
+        "correct": true,
+        "latency_ms": 44.75998878479004,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0100",
+        "correct": true,
+        "latency_ms": 57.311296463012695,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0101",
+        "correct": true,
+        "latency_ms": 61.23805046081543,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0102",
+        "correct": true,
+        "latency_ms": 54.817914962768555,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0103",
+        "correct": true,
+        "latency_ms": 63.22193145751953,
+        "consensus_pick": "Science_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0104",
+        "correct": true,
+        "latency_ms": 57.77549743652344,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0105",
+        "correct": true,
+        "latency_ms": 50.55999755859375,
+        "consensus_pick": "Maps_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0106",
+        "correct": true,
+        "latency_ms": 56.51569366455078,
+        "consensus_pick": "Energy_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0107",
+        "correct": true,
+        "latency_ms": 61.855316162109375,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0108",
+        "correct": true,
+        "latency_ms": 61.125993728637695,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0109",
+        "correct": true,
+        "latency_ms": 50.389766693115234,
+        "consensus_pick": "Agriculture_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0110",
+        "correct": true,
+        "latency_ms": 71.19297981262207,
+        "consensus_pick": "News_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0111",
+        "correct": true,
+        "latency_ms": 51.3463020324707,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0112",
+        "correct": true,
+        "latency_ms": 56.65230751037598,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0113",
+        "correct": true,
+        "latency_ms": 67.21758842468262,
+        "consensus_pick": "Food_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0114",
+        "correct": true,
+        "latency_ms": 72.48568534851074,
+        "consensus_pick": "Maps_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0115",
+        "correct": true,
+        "latency_ms": 58.84552001953125,
+        "consensus_pick": "Health_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0116",
+        "correct": true,
+        "latency_ms": 52.12664604187012,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0117",
+        "correct": true,
+        "latency_ms": 60.140132904052734,
+        "consensus_pick": "Weather_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0118",
+        "correct": true,
+        "latency_ms": 68.47333908081055,
+        "consensus_pick": "Music_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0119",
+        "correct": true,
+        "latency_ms": 52.964210510253906,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0120",
+        "correct": true,
+        "latency_ms": 63.47513198852539,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0121",
+        "correct": true,
+        "latency_ms": 67.18683242797852,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0122",
+        "correct": true,
+        "latency_ms": 64.73135948181152,
+        "consensus_pick": "Shopping_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0123",
+        "correct": true,
+        "latency_ms": 57.834625244140625,
+        "consensus_pick": "Food_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0124",
+        "correct": true,
+        "latency_ms": 64.1622543334961,
+        "consensus_pick": "Shopping_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0125",
+        "correct": true,
+        "latency_ms": 56.04887008666992,
+        "consensus_pick": "News_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0126",
+        "correct": true,
+        "latency_ms": 67.37017631530762,
+        "consensus_pick": "Government_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0127",
+        "correct": true,
+        "latency_ms": 68.28784942626953,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0128",
+        "correct": true,
+        "latency_ms": 58.484792709350586,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0129",
+        "correct": true,
+        "latency_ms": 57.37590789794922,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0130",
+        "correct": true,
+        "latency_ms": 56.66756629943848,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0131",
+        "correct": true,
+        "latency_ms": 51.92160606384277,
+        "consensus_pick": "Movies_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0132",
+        "correct": true,
+        "latency_ms": 61.36322021484375,
+        "consensus_pick": "Music_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0133",
+        "correct": true,
+        "latency_ms": 59.0059757232666,
+        "consensus_pick": "Education_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0134",
+        "correct": true,
+        "latency_ms": 58.95066261291504,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0135",
+        "correct": true,
+        "latency_ms": 60.72402000427246,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0136",
+        "correct": true,
+        "latency_ms": 49.03125762939453,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0137",
+        "correct": true,
+        "latency_ms": 71.57683372497559,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0138",
+        "correct": true,
+        "latency_ms": 62.06989288330078,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0139",
+        "correct": true,
+        "latency_ms": 55.59587478637695,
+        "consensus_pick": "Shopping_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0140",
+        "correct": true,
+        "latency_ms": 59.83233451843262,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0141",
+        "correct": false,
+        "latency_ms": 57.34848976135254,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0142",
+        "correct": true,
+        "latency_ms": 69.49687004089355,
+        "consensus_pick": "Science_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0143",
+        "correct": true,
+        "latency_ms": 57.10029602050781,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0144",
+        "correct": true,
+        "latency_ms": 58.06422233581543,
+        "consensus_pick": "Agriculture_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0145",
+        "correct": true,
+        "latency_ms": 60.99390983581543,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0146",
+        "correct": true,
+        "latency_ms": 44.164419174194336,
+        "consensus_pick": "Food_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0147",
+        "correct": true,
+        "latency_ms": 51.4988899230957,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0148",
+        "correct": true,
+        "latency_ms": 54.35681343078613,
+        "consensus_pick": "Government_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0149",
+        "correct": true,
+        "latency_ms": 67.08884239196777,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0150",
+        "correct": true,
+        "latency_ms": 52.26540565490723,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0151",
+        "correct": true,
+        "latency_ms": 67.90876388549805,
+        "consensus_pick": "Maps_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0152",
+        "correct": true,
+        "latency_ms": 55.303335189819336,
+        "consensus_pick": "News_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0153",
+        "correct": true,
+        "latency_ms": 64.19706344604492,
+        "consensus_pick": "News_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0154",
+        "correct": true,
+        "latency_ms": 45.668601989746094,
+        "consensus_pick": "Education_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0155",
+        "correct": false,
+        "latency_ms": 51.07522010803223,
+        "consensus_pick": "Maps_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0156",
+        "correct": true,
+        "latency_ms": 55.898189544677734,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0157",
+        "correct": true,
+        "latency_ms": 63.471317291259766,
+        "consensus_pick": "Sports_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0158",
+        "correct": true,
+        "latency_ms": 52.4294376373291,
+        "consensus_pick": "Agriculture_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0159",
+        "correct": true,
+        "latency_ms": 61.76185607910156,
+        "consensus_pick": "Music_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0160",
+        "correct": true,
+        "latency_ms": 57.61551856994629,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0161",
+        "correct": true,
+        "latency_ms": 57.95407295227051,
+        "consensus_pick": "Finance_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0162",
+        "correct": true,
+        "latency_ms": 55.00483512878418,
+        "consensus_pick": "Food_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0163",
+        "correct": true,
+        "latency_ms": 50.5375862121582,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0164",
+        "correct": true,
+        "latency_ms": 53.632259368896484,
+        "consensus_pick": "Health_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0165",
+        "correct": true,
+        "latency_ms": 53.23505401611328,
+        "consensus_pick": "Energy_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0166",
+        "correct": true,
+        "latency_ms": 57.891845703125,
+        "consensus_pick": "Science_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0167",
+        "correct": true,
+        "latency_ms": 51.245927810668945,
+        "consensus_pick": "Travel_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0168",
+        "correct": true,
+        "latency_ms": 65.33026695251465,
+        "consensus_pick": "Movies_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0169",
+        "correct": true,
+        "latency_ms": 54.7633171081543,
+        "consensus_pick": "Music_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0170",
+        "correct": true,
+        "latency_ms": 53.20239067077637,
+        "consensus_pick": "Finance_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0171",
+        "correct": true,
+        "latency_ms": 71.88844680786133,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0172",
+        "correct": true,
+        "latency_ms": 60.591697692871094,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0173",
+        "correct": true,
+        "latency_ms": 49.1795539855957,
+        "consensus_pick": "Shopping_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0174",
+        "correct": true,
+        "latency_ms": 57.85822868347168,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0175",
+        "correct": true,
+        "latency_ms": 54.59928512573242,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0176",
+        "correct": true,
+        "latency_ms": 45.5322265625,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0177",
+        "correct": true,
+        "latency_ms": 58.293819427490234,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0178",
+        "correct": true,
+        "latency_ms": 67.80600547790527,
+        "consensus_pick": "Sports_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0179",
+        "correct": true,
+        "latency_ms": 53.536415100097656,
+        "consensus_pick": "Movies_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0180",
+        "correct": true,
+        "latency_ms": 47.800302505493164,
+        "consensus_pick": "Agriculture_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0181",
+        "correct": true,
+        "latency_ms": 53.76696586608887,
+        "consensus_pick": "Energy_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0182",
+        "correct": true,
+        "latency_ms": 56.891441345214844,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0183",
+        "correct": true,
+        "latency_ms": 51.338911056518555,
+        "consensus_pick": "Agriculture_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0184",
+        "correct": true,
+        "latency_ms": 55.789947509765625,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0185",
+        "correct": true,
+        "latency_ms": 53.95340919494629,
+        "consensus_pick": "Agriculture_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0186",
+        "correct": true,
+        "latency_ms": 69.11373138427734,
+        "consensus_pick": "Food_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0187",
+        "correct": true,
+        "latency_ms": 64.42523002624512,
+        "consensus_pick": "Sports_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0188",
+        "correct": true,
+        "latency_ms": 47.86348342895508,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0189",
+        "correct": true,
+        "latency_ms": 46.92840576171875,
+        "consensus_pick": "Food_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0190",
+        "correct": true,
+        "latency_ms": 65.86313247680664,
+        "consensus_pick": "Education_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0191",
+        "correct": true,
+        "latency_ms": 61.6762638092041,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0192",
+        "correct": true,
+        "latency_ms": 54.94117736816406,
+        "consensus_pick": "Energy_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0193",
+        "correct": true,
+        "latency_ms": 69.16952133178711,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0194",
+        "correct": true,
+        "latency_ms": 66.1625862121582,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0195",
+        "correct": true,
+        "latency_ms": 57.035207748413086,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0196",
+        "correct": true,
+        "latency_ms": 48.25758934020996,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0197",
+        "correct": true,
+        "latency_ms": 63.94028663635254,
+        "consensus_pick": "Government_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0198",
+        "correct": true,
+        "latency_ms": 56.9920539855957,
+        "consensus_pick": "Government_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0199",
+        "correct": true,
+        "latency_ms": 56.539297103881836,
+        "consensus_pick": "Science_API_2",
+        "replicas": 3
+      }
+    ],
+    "S4_mesh_20pct_loss": [
+      {
+        "qid": "q0000",
+        "correct": true,
+        "latency_ms": 65.48690795898438,
+        "consensus_pick": "Sports_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0001",
+        "correct": true,
+        "latency_ms": 81.24065399169922,
+        "consensus_pick": "Shopping_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0002",
+        "correct": true,
+        "latency_ms": 83.88018608093262,
+        "consensus_pick": "Music_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0003",
+        "correct": true,
+        "latency_ms": 86.17854118347168,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0004",
+        "correct": true,
+        "latency_ms": 111.48691177368164,
+        "consensus_pick": "Agriculture_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0005",
+        "correct": true,
+        "latency_ms": 84.09380912780762,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0006",
+        "correct": true,
+        "latency_ms": 102.74910926818848,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0007",
+        "correct": true,
+        "latency_ms": 95.87740898132324,
+        "consensus_pick": "Finance_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0008",
+        "correct": true,
+        "latency_ms": 109.21120643615723,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0009",
+        "correct": true,
+        "latency_ms": 117.3393726348877,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0010",
+        "correct": true,
+        "latency_ms": 88.84525299072266,
+        "consensus_pick": "Finance_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0011",
+        "correct": true,
+        "latency_ms": 96.22526168823242,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0012",
+        "correct": true,
+        "latency_ms": 86.90166473388672,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0013",
+        "correct": true,
+        "latency_ms": 61.81955337524414,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 2
+      },
+      {
+        "qid": "q0014",
+        "correct": true,
+        "latency_ms": 97.43356704711914,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0015",
+        "correct": true,
+        "latency_ms": 85.93511581420898,
+        "consensus_pick": "Energy_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0016",
+        "correct": true,
+        "latency_ms": 101.57895088195801,
+        "consensus_pick": "Movies_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0017",
+        "correct": true,
+        "latency_ms": 113.97147178649902,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0018",
+        "correct": true,
+        "latency_ms": 77.62813568115234,
+        "consensus_pick": "Government_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0019",
+        "correct": true,
+        "latency_ms": 86.71998977661133,
+        "consensus_pick": "Energy_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0020",
+        "correct": true,
+        "latency_ms": 89.3092155456543,
+        "consensus_pick": "Education_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0021",
+        "correct": true,
+        "latency_ms": 111.15503311157227,
+        "consensus_pick": "Travel_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0022",
+        "correct": true,
+        "latency_ms": 103.37090492248535,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0023",
+        "correct": true,
+        "latency_ms": 94.19441223144531,
+        "consensus_pick": "Education_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0024",
+        "correct": true,
+        "latency_ms": 72.13449478149414,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0025",
+        "correct": true,
+        "latency_ms": 86.20166778564453,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0026",
+        "correct": true,
+        "latency_ms": 96.18115425109863,
+        "consensus_pick": "Government_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0027",
+        "correct": true,
+        "latency_ms": 108.88838768005371,
+        "consensus_pick": "Health_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0028",
+        "correct": true,
+        "latency_ms": 66.64204597473145,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0029",
+        "correct": true,
+        "latency_ms": 101.26709938049316,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0030",
+        "correct": true,
+        "latency_ms": 101.01985931396484,
+        "consensus_pick": "Health_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0031",
+        "correct": true,
+        "latency_ms": 93.37830543518066,
+        "consensus_pick": "Health_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0032",
+        "correct": true,
+        "latency_ms": 92.51928329467773,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0033",
+        "correct": true,
+        "latency_ms": 86.5330696105957,
+        "consensus_pick": "Music_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0034",
+        "correct": true,
+        "latency_ms": 99.11251068115234,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0035",
+        "correct": true,
+        "latency_ms": 77.97455787658691,
+        "consensus_pick": "Maps_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0036",
+        "correct": true,
+        "latency_ms": 86.53950691223145,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0037",
+        "correct": true,
+        "latency_ms": 94.1007137298584,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0038",
+        "correct": true,
+        "latency_ms": 85.25729179382324,
+        "consensus_pick": "Food_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0039",
+        "correct": true,
+        "latency_ms": 93.11103820800781,
+        "consensus_pick": "Science_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0040",
+        "correct": true,
+        "latency_ms": 111.88697814941406,
+        "consensus_pick": "Government_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0041",
+        "correct": true,
+        "latency_ms": 85.15262603759766,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0042",
+        "correct": true,
+        "latency_ms": 79.38146591186523,
+        "consensus_pick": "Music_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0043",
+        "correct": true,
+        "latency_ms": 85.84856986999512,
+        "consensus_pick": "Agriculture_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0044",
+        "correct": true,
+        "latency_ms": 92.56172180175781,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0045",
+        "correct": true,
+        "latency_ms": 93.39165687561035,
+        "consensus_pick": "News_API_7",
+        "replicas": 2
+      },
+      {
+        "qid": "q0046",
+        "correct": true,
+        "latency_ms": 73.19426536560059,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0047",
+        "correct": true,
+        "latency_ms": 76.90215110778809,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0048",
+        "correct": true,
+        "latency_ms": 74.86343383789062,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0049",
+        "correct": true,
+        "latency_ms": 109.65943336486816,
+        "consensus_pick": "Weather_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0050",
+        "correct": true,
+        "latency_ms": 84.88154411315918,
+        "consensus_pick": "Energy_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0051",
+        "correct": true,
+        "latency_ms": 81.52580261230469,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0052",
+        "correct": true,
+        "latency_ms": 82.29613304138184,
+        "consensus_pick": "Sports_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0053",
+        "correct": true,
+        "latency_ms": 93.54209899902344,
+        "consensus_pick": "Food_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0054",
+        "correct": true,
+        "latency_ms": 93.58882904052734,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0055",
+        "correct": true,
+        "latency_ms": 93.34993362426758,
+        "consensus_pick": "Health_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0056",
+        "correct": true,
+        "latency_ms": 80.1548957824707,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0057",
+        "correct": true,
+        "latency_ms": 77.61836051940918,
+        "consensus_pick": "Health_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0058",
+        "correct": true,
+        "latency_ms": 69.70095634460449,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0059",
+        "correct": true,
+        "latency_ms": 113.3260726928711,
+        "consensus_pick": "News_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0060",
+        "correct": true,
+        "latency_ms": 101.7160415649414,
+        "consensus_pick": "Health_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0061",
+        "correct": true,
+        "latency_ms": 84.06877517700195,
+        "consensus_pick": "Food_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0062",
+        "correct": true,
+        "latency_ms": 87.8596305847168,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0063",
+        "correct": true,
+        "latency_ms": 88.21630477905273,
+        "consensus_pick": "Movies_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0064",
+        "correct": true,
+        "latency_ms": 91.44139289855957,
+        "consensus_pick": "Music_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0065",
+        "correct": true,
+        "latency_ms": 60.219764709472656,
+        "consensus_pick": "Music_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0066",
+        "correct": true,
+        "latency_ms": 84.14983749389648,
+        "consensus_pick": "Weather_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0067",
+        "correct": true,
+        "latency_ms": 100.72851181030273,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0068",
+        "correct": true,
+        "latency_ms": 77.02898979187012,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0069",
+        "correct": true,
+        "latency_ms": 97.5337028503418,
+        "consensus_pick": "Health_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0070",
+        "correct": true,
+        "latency_ms": 91.29071235656738,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0071",
+        "correct": true,
+        "latency_ms": 92.94319152832031,
+        "consensus_pick": "Travel_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0072",
+        "correct": true,
+        "latency_ms": 89.25580978393555,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0073",
+        "correct": true,
+        "latency_ms": 93.8870906829834,
+        "consensus_pick": "Government_API_7",
+        "replicas": 2
+      },
+      {
+        "qid": "q0074",
+        "correct": true,
+        "latency_ms": 98.27399253845215,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0075",
+        "correct": true,
+        "latency_ms": 77.70037651062012,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0076",
+        "correct": true,
+        "latency_ms": 81.24065399169922,
+        "consensus_pick": "Food_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0077",
+        "correct": true,
+        "latency_ms": 105.38530349731445,
+        "consensus_pick": "Music_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0078",
+        "correct": true,
+        "latency_ms": 86.49253845214844,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0079",
+        "correct": true,
+        "latency_ms": 97.63479232788086,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0080",
+        "correct": true,
+        "latency_ms": 73.64535331726074,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0081",
+        "correct": true,
+        "latency_ms": 69.43464279174805,
+        "consensus_pick": "Food_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0082",
+        "correct": true,
+        "latency_ms": 109.17496681213379,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0083",
+        "correct": true,
+        "latency_ms": 64.86868858337402,
+        "consensus_pick": "Science_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0084",
+        "correct": true,
+        "latency_ms": 96.45867347717285,
+        "consensus_pick": "News_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0085",
+        "correct": true,
+        "latency_ms": 96.75788879394531,
+        "consensus_pick": "Music_API_7",
+        "replicas": 2
+      },
+      {
+        "qid": "q0086",
+        "correct": true,
+        "latency_ms": 97.88393974304199,
+        "consensus_pick": "Agriculture_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0087",
+        "correct": true,
+        "latency_ms": 80.4295539855957,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0088",
+        "correct": true,
+        "latency_ms": 76.56097412109375,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0089",
+        "correct": true,
+        "latency_ms": 116.9130802154541,
+        "consensus_pick": "Agriculture_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0090",
+        "correct": true,
+        "latency_ms": 83.1451416015625,
+        "consensus_pick": "Government_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0091",
+        "correct": false,
+        "latency_ms": 119.22049522399902,
+        "consensus_pick": "Sports_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0092",
+        "correct": true,
+        "latency_ms": 104.00056838989258,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0093",
+        "correct": true,
+        "latency_ms": 96.47250175476074,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0094",
+        "correct": true,
+        "latency_ms": 73.44222068786621,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0095",
+        "correct": true,
+        "latency_ms": 85.85596084594727,
+        "consensus_pick": "Government_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0096",
+        "correct": true,
+        "latency_ms": 82.14855194091797,
+        "consensus_pick": "Agriculture_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0097",
+        "correct": true,
+        "latency_ms": 84.83242988586426,
+        "consensus_pick": "Shopping_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0098",
+        "correct": true,
+        "latency_ms": 112.05697059631348,
+        "consensus_pick": "Music_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0099",
+        "correct": true,
+        "latency_ms": 81.35080337524414,
+        "consensus_pick": "Government_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0100",
+        "correct": true,
+        "latency_ms": 77.30960845947266,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0101",
+        "correct": true,
+        "latency_ms": 97.63169288635254,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0102",
+        "correct": true,
+        "latency_ms": 51.64837837219238,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0103",
+        "correct": true,
+        "latency_ms": 109.86828804016113,
+        "consensus_pick": "Science_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0104",
+        "correct": true,
+        "latency_ms": 101.47881507873535,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0105",
+        "correct": false,
+        "latency_ms": 85.33477783203125,
+        "consensus_pick": "Maps_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0106",
+        "correct": true,
+        "latency_ms": 63.03596496582031,
+        "consensus_pick": "Energy_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0107",
+        "correct": true,
+        "latency_ms": 78.1869888305664,
+        "consensus_pick": "Energy_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0108",
+        "correct": true,
+        "latency_ms": 77.72064208984375,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0109",
+        "correct": true,
+        "latency_ms": 84.70869064331055,
+        "consensus_pick": "Agriculture_API_7",
+        "replicas": 2
+      },
+      {
+        "qid": "q0110",
+        "correct": true,
+        "latency_ms": 86.53712272644043,
+        "consensus_pick": "News_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0111",
+        "correct": true,
+        "latency_ms": 82.19647407531738,
+        "consensus_pick": "Education_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0112",
+        "correct": true,
+        "latency_ms": 79.26249504089355,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0113",
+        "correct": true,
+        "latency_ms": 85.44445037841797,
+        "consensus_pick": "Food_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0114",
+        "correct": true,
+        "latency_ms": 67.22497940063477,
+        "consensus_pick": "Maps_API_7",
+        "replicas": 2
+      },
+      {
+        "qid": "q0115",
+        "correct": true,
+        "latency_ms": 86.90214157104492,
+        "consensus_pick": "Health_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0116",
+        "correct": true,
+        "latency_ms": 69.64302062988281,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0117",
+        "correct": true,
+        "latency_ms": 111.34171485900879,
+        "consensus_pick": "Weather_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0118",
+        "correct": true,
+        "latency_ms": 100.49629211425781,
+        "consensus_pick": "Music_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0119",
+        "correct": true,
+        "latency_ms": 81.46405220031738,
+        "consensus_pick": "Sports_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0120",
+        "correct": true,
+        "latency_ms": 70.70636749267578,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0121",
+        "correct": true,
+        "latency_ms": 58.87484550476074,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 2
+      },
+      {
+        "qid": "q0122",
+        "correct": true,
+        "latency_ms": 91.43424034118652,
+        "consensus_pick": "Shopping_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0123",
+        "correct": true,
+        "latency_ms": 81.15792274475098,
+        "consensus_pick": "Food_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0124",
+        "correct": true,
+        "latency_ms": 103.64866256713867,
+        "consensus_pick": "Shopping_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0125",
+        "correct": true,
+        "latency_ms": 105.4387092590332,
+        "consensus_pick": "News_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0126",
+        "correct": true,
+        "latency_ms": 87.21065521240234,
+        "consensus_pick": "Government_API_5",
+        "replicas": 2
+      },
+      {
+        "qid": "q0127",
+        "correct": true,
+        "latency_ms": 92.40579605102539,
+        "consensus_pick": "Weather_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0128",
+        "correct": true,
+        "latency_ms": 81.01224899291992,
+        "consensus_pick": "Government_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0129",
+        "correct": true,
+        "latency_ms": 107.45477676391602,
+        "consensus_pick": "Weather_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0130",
+        "correct": true,
+        "latency_ms": 85.65545082092285,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0131",
+        "correct": false,
+        "latency_ms": 85.10589599609375,
+        "consensus_pick": "Movies_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0132",
+        "correct": true,
+        "latency_ms": 76.0045051574707,
+        "consensus_pick": "Music_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0133",
+        "correct": true,
+        "latency_ms": 96.78030014038086,
+        "consensus_pick": "Education_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0134",
+        "correct": true,
+        "latency_ms": 81.91275596618652,
+        "consensus_pick": "Government_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0135",
+        "correct": true,
+        "latency_ms": 96.45795822143555,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0136",
+        "correct": true,
+        "latency_ms": 81.30693435668945,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0137",
+        "correct": true,
+        "latency_ms": 72.23153114318848,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0138",
+        "correct": true,
+        "latency_ms": 99.30205345153809,
+        "consensus_pick": "Sports_API_2",
+        "replicas": 1
+      },
+      {
+        "qid": "q0139",
+        "correct": true,
+        "latency_ms": 94.9242115020752,
+        "consensus_pick": "Shopping_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0140",
+        "correct": true,
+        "latency_ms": 103.40428352355957,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0141",
+        "correct": true,
+        "latency_ms": 79.58006858825684,
+        "consensus_pick": "Travel_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0142",
+        "correct": true,
+        "latency_ms": 96.82130813598633,
+        "consensus_pick": "Science_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0143",
+        "correct": true,
+        "latency_ms": 71.69198989868164,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0144",
+        "correct": true,
+        "latency_ms": 96.92263603210449,
+        "consensus_pick": "Agriculture_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0145",
+        "correct": true,
+        "latency_ms": 70.78313827514648,
+        "consensus_pick": "Maps_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0146",
+        "correct": true,
+        "latency_ms": 81.25782012939453,
+        "consensus_pick": "Food_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0147",
+        "correct": true,
+        "latency_ms": 115.79513549804688,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0148",
+        "correct": true,
+        "latency_ms": 90.87061882019043,
+        "consensus_pick": "Government_API_6",
+        "replicas": 2
+      },
+      {
+        "qid": "q0149",
+        "correct": true,
+        "latency_ms": 84.70988273620605,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0150",
+        "correct": true,
+        "latency_ms": 69.05031204223633,
+        "consensus_pick": "Weather_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0151",
+        "correct": false,
+        "latency_ms": 77.47244834899902,
+        "consensus_pick": "Maps_API_1",
+        "replicas": 1
+      },
+      {
+        "qid": "q0152",
+        "correct": false,
+        "latency_ms": 96.19784355163574,
+        "consensus_pick": "News_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0153",
+        "correct": true,
+        "latency_ms": 86.0443115234375,
+        "consensus_pick": "News_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0154",
+        "correct": true,
+        "latency_ms": 99.04670715332031,
+        "consensus_pick": "Education_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0155",
+        "correct": true,
+        "latency_ms": 99.66349601745605,
+        "consensus_pick": "Maps_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0156",
+        "correct": true,
+        "latency_ms": 104.6605110168457,
+        "consensus_pick": "Travel_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0157",
+        "correct": true,
+        "latency_ms": 89.94698524475098,
+        "consensus_pick": "Sports_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0158",
+        "correct": true,
+        "latency_ms": 98.15263748168945,
+        "consensus_pick": "Agriculture_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0159",
+        "correct": true,
+        "latency_ms": 77.20255851745605,
+        "consensus_pick": "Music_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0160",
+        "correct": true,
+        "latency_ms": 72.93820381164551,
+        "consensus_pick": "Health_API_6",
+        "replicas": 1
+      },
+      {
+        "qid": "q0161",
+        "correct": true,
+        "latency_ms": 69.62418556213379,
+        "consensus_pick": "Finance_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0162",
+        "correct": true,
+        "latency_ms": 97.23305702209473,
+        "consensus_pick": "Food_API_6",
+        "replicas": 2
+      },
+      {
+        "qid": "q0163",
+        "correct": true,
+        "latency_ms": 99.60293769836426,
+        "consensus_pick": "Music_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0164",
+        "correct": false,
+        "latency_ms": 98.72198104858398,
+        "consensus_pick": "Health_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0165",
+        "correct": true,
+        "latency_ms": 71.04754447937012,
+        "consensus_pick": "Energy_API_0",
+        "replicas": 2
+      },
+      {
+        "qid": "q0166",
+        "correct": true,
+        "latency_ms": 91.08543395996094,
+        "consensus_pick": "Science_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0167",
+        "correct": true,
+        "latency_ms": 87.09216117858887,
+        "consensus_pick": "Travel_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0168",
+        "correct": true,
+        "latency_ms": 69.80729103088379,
+        "consensus_pick": "Movies_API_4",
+        "replicas": 2
+      },
+      {
+        "qid": "q0169",
+        "correct": true,
+        "latency_ms": 78.53078842163086,
+        "consensus_pick": "Music_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0170",
+        "correct": true,
+        "latency_ms": 80.84297180175781,
+        "consensus_pick": "Finance_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0171",
+        "correct": true,
+        "latency_ms": 85.9074592590332,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 2
+      },
+      {
+        "qid": "q0172",
+        "correct": true,
+        "latency_ms": 84.10429954528809,
+        "consensus_pick": "Shopping_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0173",
+        "correct": true,
+        "latency_ms": 102.7836799621582,
+        "consensus_pick": "Shopping_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0174",
+        "correct": true,
+        "latency_ms": 68.11046600341797,
+        "consensus_pick": "Energy_API_5",
+        "replicas": 2
+      },
+      {
+        "qid": "q0175",
+        "correct": true,
+        "latency_ms": 78.83644104003906,
+        "consensus_pick": "Finance_API_1",
+        "replicas": 3
+      },
+      {
+        "qid": "q0176",
+        "correct": true,
+        "latency_ms": 95.2463150024414,
+        "consensus_pick": "Shopping_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0177",
+        "correct": true,
+        "latency_ms": 76.0502815246582,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0178",
+        "correct": true,
+        "latency_ms": 66.71881675720215,
+        "consensus_pick": "Sports_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0179",
+        "correct": true,
+        "latency_ms": 89.57529067993164,
+        "consensus_pick": "Movies_API_5",
+        "replicas": 2
+      },
+      {
+        "qid": "q0180",
+        "correct": true,
+        "latency_ms": 77.8188705444336,
+        "consensus_pick": "Agriculture_API_1",
+        "replicas": 2
+      },
+      {
+        "qid": "q0181",
+        "correct": true,
+        "latency_ms": 84.1376781463623,
+        "consensus_pick": "Energy_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0182",
+        "correct": true,
+        "latency_ms": 80.13558387756348,
+        "consensus_pick": "Shopping_API_0",
+        "replicas": 3
+      },
+      {
+        "qid": "q0183",
+        "correct": true,
+        "latency_ms": 67.56830215454102,
+        "consensus_pick": "Agriculture_API_0",
+        "replicas": 1
+      },
+      {
+        "qid": "q0184",
+        "correct": true,
+        "latency_ms": 95.59178352355957,
+        "consensus_pick": "Travel_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0185",
+        "correct": true,
+        "latency_ms": 79.56290245056152,
+        "consensus_pick": "Agriculture_API_1",
+        "replicas": 1
+      },
+      {
+        "qid": "q0186",
+        "correct": true,
+        "latency_ms": 92.90432929992676,
+        "consensus_pick": "Food_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0187",
+        "correct": true,
+        "latency_ms": 98.4354019165039,
+        "consensus_pick": "Sports_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0188",
+        "correct": true,
+        "latency_ms": 112.95056343078613,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0189",
+        "correct": true,
+        "latency_ms": 91.3541316986084,
+        "consensus_pick": "Food_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0190",
+        "correct": true,
+        "latency_ms": 82.41963386535645,
+        "consensus_pick": "Education_API_2",
+        "replicas": 3
+      },
+      {
+        "qid": "q0191",
+        "correct": true,
+        "latency_ms": 57.80434608459473,
+        "consensus_pick": "Travel_API_6",
+        "replicas": 2
+      },
+      {
+        "qid": "q0192",
+        "correct": true,
+        "latency_ms": 96.0385799407959,
+        "consensus_pick": "Energy_API_2",
+        "replicas": 2
+      },
+      {
+        "qid": "q0193",
+        "correct": true,
+        "latency_ms": 92.35286712646484,
+        "consensus_pick": "Education_API_6",
+        "replicas": 3
+      },
+      {
+        "qid": "q0194",
+        "correct": true,
+        "latency_ms": 84.76877212524414,
+        "consensus_pick": "Finance_API_4",
+        "replicas": 3
+      },
+      {
+        "qid": "q0195",
+        "correct": true,
+        "latency_ms": 84.79571342468262,
+        "consensus_pick": "Education_API_3",
+        "replicas": 2
+      },
+      {
+        "qid": "q0196",
+        "correct": true,
+        "latency_ms": 93.23978424072266,
+        "consensus_pick": "Agriculture_API_5",
+        "replicas": 3
+      },
+      {
+        "qid": "q0197",
+        "correct": true,
+        "latency_ms": 104.33340072631836,
+        "consensus_pick": "Government_API_7",
+        "replicas": 3
+      },
+      {
+        "qid": "q0198",
+        "correct": true,
+        "latency_ms": 105.1177978515625,
+        "consensus_pick": "Government_API_3",
+        "replicas": 3
+      },
+      {
+        "qid": "q0199",
+        "correct": true,
+        "latency_ms": 88.94658088684082,
+        "consensus_pick": "Science_API_2",
+        "replicas": 2
+      }
+    ],
+    "S5_karnataka_apmc_mesh": [
+      {
+        "qid": "ka_Onion_Bangalore",
+        "correct": true,
+        "latency_ms": 83.15658569335938,
+        "consensus_pick": "karnataka_Onion_Bangalore",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Tomato_Kolar",
+        "correct": true,
+        "latency_ms": 105.1480770111084,
+        "consensus_pick": "karnataka_Tomato_Kolar",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Potato_Hassan",
+        "correct": true,
+        "latency_ms": 110.91184616088867,
+        "consensus_pick": "karnataka_Potato_Hassan",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Paddy_Mandya",
+        "correct": true,
+        "latency_ms": 97.28837013244629,
+        "consensus_pick": "karnataka_Paddy_Mandya",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Ragi_Tumkur",
+        "correct": false,
+        "latency_ms": 103.58977317810059,
+        "consensus_pick": "karnataka_Maize_Davangere",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Maize_Davangere",
+        "correct": true,
+        "latency_ms": 114.28499221801758,
+        "consensus_pick": "karnataka_Maize_Davangere",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Cotton_Raichur",
+        "correct": true,
+        "latency_ms": 115.94057083129883,
+        "consensus_pick": "karnataka_Cotton_Raichur",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Groundnut_Chitradurga",
+        "correct": true,
+        "latency_ms": 106.28175735473633,
+        "consensus_pick": "karnataka_Groundnut_Chitradurga",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Sunflower_Bagalkot",
+        "correct": true,
+        "latency_ms": 114.99238014221191,
+        "consensus_pick": "karnataka_Sunflower_Bagalkot",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Sugarcane_Belagavi",
+        "correct": true,
+        "latency_ms": 115.36335945129395,
+        "consensus_pick": "karnataka_Sugarcane_Belagavi",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Arecanut_Shivamogga",
+        "correct": true,
+        "latency_ms": 98.96016120910645,
+        "consensus_pick": "karnataka_Arecanut_Shivamogga",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Coffee_Chikkamagaluru",
+        "correct": true,
+        "latency_ms": 115.14616012573242,
+        "consensus_pick": "karnataka_Coffee_Chikkamagaluru",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Cardamom_Kodagu",
+        "correct": true,
+        "latency_ms": 104.4008731842041,
+        "consensus_pick": "karnataka_Cardamom_Kodagu",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Black_Pepper_Uttara_Kannada",
+        "correct": true,
+        "latency_ms": 120.4690933227539,
+        "consensus_pick": "karnataka_Black_Pepper_Uttara_Kannada",
+        "replicas": 3
+      },
+      {
+        "qid": "ka_Coconut_Mysuru",
+        "correct": true,
+        "latency_ms": 119.52877044677734,
+        "consensus_pick": "karnataka_Coconut_Mysuru",
+        "replicas": 3
+      }
+    ],
+    "S6_karnataka_apmc_baseline": [
+      {
+        "qid": "ka_Onion_Bangalore",
+        "correct": true,
+        "latency_ms": 5.228519439697266,
+        "confidence": 0.9437876331490409
+      },
+      {
+        "qid": "ka_Tomato_Kolar",
+        "correct": false,
+        "latency_ms": 5.198001861572266,
+        "confidence": 0.9081128851953352
+      },
+      {
+        "qid": "ka_Potato_Hassan",
+        "correct": true,
+        "latency_ms": 5.23066520690918,
+        "confidence": 0.9955242237697899
+      },
+      {
+        "qid": "ka_Paddy_Mandya",
+        "correct": false,
+        "latency_ms": 5.119800567626953,
+        "confidence": 0.9130110532378982
+      },
+      {
+        "qid": "ka_Ragi_Tumkur",
+        "correct": false,
+        "latency_ms": 5.277872085571289,
+        "confidence": 0.9666063677707588
+      },
+      {
+        "qid": "ka_Maize_Davangere",
+        "correct": true,
+        "latency_ms": 5.242824554443359,
+        "confidence": 0.9544596940585406
+      },
+      {
+        "qid": "ka_Cotton_Raichur",
+        "correct": false,
+        "latency_ms": 5.171298980712891,
+        "confidence": 0.9675402502901433
+      },
+      {
+        "qid": "ka_Groundnut_Chitradurga",
+        "correct": false,
+        "latency_ms": 5.270957946777344,
+        "confidence": 0.9328338242269067
+      },
+      {
+        "qid": "ka_Sunflower_Bagalkot",
+        "correct": false,
+        "latency_ms": 5.281686782836914,
+        "confidence": 0.9638385459738009
+      },
+      {
+        "qid": "ka_Sugarcane_Belagavi",
+        "correct": true,
+        "latency_ms": 5.285501480102539,
+        "confidence": 0.7885496773464443
+      },
+      {
+        "qid": "ka_Arecanut_Shivamogga",
+        "correct": true,
+        "latency_ms": 5.121707916259766,
+        "confidence": 0.9369770197112736
+      },
+      {
+        "qid": "ka_Coffee_Chikkamagaluru",
+        "correct": true,
+        "latency_ms": 5.106687545776367,
+        "confidence": 0.9608663509484554
+      },
+      {
+        "qid": "ka_Cardamom_Kodagu",
+        "correct": false,
+        "latency_ms": 5.09953498840332,
+        "confidence": 0.9962578393535727
+      },
+      {
+        "qid": "ka_Black_Pepper_Uttara_Kannada",
+        "correct": true,
+        "latency_ms": 5.115747451782227,
+        "confidence": 0.959720169674594
+      },
+      {
+        "qid": "ka_Coconut_Mysuru",
+        "correct": true,
+        "latency_ms": 5.100488662719727,
+        "confidence": 0.9213943664497221
+      }
+    ]
+  }
+}
