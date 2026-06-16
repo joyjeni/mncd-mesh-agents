@@ -96,9 +96,8 @@ export default function Home() {
       <Card title="Architecture">
         <p style={{ marginTop: 0 }}>
           Each agent is an equal peer with a pub/sub bus, gossip outbox, replicated K/V, and a failure
-          detector. The mesh transports topic-tagged messages with TTL gossip propagation
-          {' \\('}\\mathcal{`{O}`}(\\log N){' \\)'} rounds for full diffusion, per
-          Demers et al. 1987).
+          detector. The mesh transports topic-tagged messages with TTL gossip propagation in
+          {` \\(\\mathcal{O}(\\log N)\\) `}rounds for full diffusion (Demers et al. 1987).
         </p>
         <img src="/figures/architecture.png" alt="Architecture" style={{ width: '100%', borderRadius: 8 }} />
       </Card>
@@ -154,7 +153,7 @@ export default function Home() {
           {`\\[ w_p^{(t+1)} = \\frac{(1-\\alpha)\\,s_p^{(t)} + \\alpha\\,\\mathbb{1}[\\text{success}]}{1 + \\ell_p^{(t)}/1000} \\]`}
         </p>
         <p><b>Gossip diffusion bound (Demers 1987):</b> with fanout k≥3, full
-          dissemination across N nodes occurs in {' \\(O(\\log N)\\)'} rounds w.h.p.</p>
+          dissemination across N nodes occurs in {` \\(O(\\log N)\\) `}rounds w.h.p.</p>
         <p><b>Replication-resilient retrieval:</b> probability that a critical key
           survives f independent node failures with replication factor R is
         </p>
