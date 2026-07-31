@@ -150,7 +150,7 @@ At each gossip round a node pushes its outbox to $k$ peers chosen by weighted
 random sampling. The weight of peer $p$ is an exponential moving average of
 its observed utility:
 \begin{equation}
-w_p^{(t+1)} \;=\; \frac{(1-\alpha)\,s_p^{(t)} + \alpha\,\mathbb{1}[\text{success}]}
+w_p^{(t+1)} \;=\; \frac{(1-\alpha)\,s_p^{(t)} + \alpha\,\mathbf{1}[\text{success}]}
                        {1 + \ell_p^{(t)}/1000}
 \label{eq:weight}
 \end{equation}
