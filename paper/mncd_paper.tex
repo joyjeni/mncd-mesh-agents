@@ -255,8 +255,32 @@ S5 Karnataka mesh & 93.3\%  & 110.9 & 119.5 & 100\% & 3.00 \\
 \end{table}
 
 \subsection{Comparison with state of the art}
-Table~\ref{tab:sota} positions MNCD against published multi-agent LLM
-frameworks. MNCD is the first to combine all four properties simultaneously.
+Figure~\ref{fig:sota-arch} contrasts the coordination topology of five
+published multi-agent LLM frameworks --- AutoGen's centralised
+\emph{GroupChat} manager, MetaGPT's fixed SOP assembly line, CAMEL's
+inception-prompted role-playing pair, LangGraph's directed state graph, and
+ToolLLaMA's single-agent depth-first search tree (DFSDT) --- against the
+MNCD peer-to-peer mesh introduced in \S\ref{sec:arch}. Every SOTA topology
+routes control or state through at most one or two privileged nodes (a
+manager, a fixed pipeline stage, or a single agent); MNCD instead makes all
+five agents equal peers connected by gossip-propagated pub/sub topics, with
+replicated critical state ($R{=}3$) and an explicit distress channel that
+reroutes low-confidence queries ($c < \tau{=}0.55$). Table~\ref{tab:sota}
+quantifies this architectural gap along coordination, context-sharing, fault
+tolerance, replication and distress-signalling. MNCD is the first to combine
+all four decentralisation properties simultaneously.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\linewidth]{../diagrams/sota_comparison_architectures.png}
+  \caption{Architectural comparison: five published SOTA multi-agent LLM
+           topologies (top row) versus the MNCD peer-to-peer mesh introduced
+           in this work (bottom). SOTA frameworks concentrate coordination in
+           a manager, pipeline, pair, or single agent; MNCD decentralises
+           coordination across equal peers with gossip diffusion, $R{=}3$
+           replication, and a distress channel.}
+  \label{fig:sota-arch}
+\end{figure*}
 
 \begin{table*}[t]
 \caption{State-of-the-art comparison.}
