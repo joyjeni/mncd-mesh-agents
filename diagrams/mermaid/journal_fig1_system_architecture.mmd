@@ -1,0 +1,43 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontFamily':'Arial, Helvetica, sans-serif', 'fontSize':'16px', 'primaryTextColor':'#28251D', 'lineColor':'#7A7974', 'edgeLabelBackground':'#F7F6F2'}}}%%
+flowchart LR
+    classDef agent fill:#BCE2E7,stroke:#006494,stroke-width:1.5px,color:#0C4E54,font-weight:bold;
+    classDef mesh fill:#20808D,stroke:#1B474D,stroke-width:1.5px,color:#FFFFFF,font-weight:bold;
+    classDef topic fill:#F7F6F2,stroke:#7A7974,stroke-width:1px,color:#28251D;
+    classDef distress fill:#FDEEE3,stroke:#A84B2F,stroke-width:1.5px,color:#6B2A10,font-weight:bold;
+    classDef consensus fill:#FFC553,stroke:#6E522B,stroke-width:1.5px,color:#3D2B0F,font-weight:bold;
+    classDef io fill:#DCEFD9,stroke:#437A22,stroke-width:1.5px,color:#2C4E16,font-weight:bold;
+
+    subgraph MESH[" Peer-to-Peer Agent Mesh, N = 5 "]
+        direction TB
+        A1["Agent 1"]:::agent
+        A2["Agent 2"]:::agent
+        A3["Agent 3"]:::agent
+        A4["Agent 4"]:::agent
+        A5["Agent 5"]:::agent
+        A1 --- A2
+        A1 --- A3
+        A2 --- A4
+        A3 --- A5
+        A4 --- A5
+        A1 --- A5
+        A2 --- A3
+    end
+
+    subgraph BUS[" Per-Node Transport Layer (MeshNode) "]
+        direction TB
+        T["Pub/Sub topics:<br/>plan.candidate, tool.evidence,<br/>rank.update, answer.partial,<br/>answer.final"]:::topic
+        G["Gossip diffusion<br/>fanout k = 3, TTL = 6<br/>O(log N) rounds"]:::mesh
+        R["Replication R = 3<br/>P_survive = 1 &minus; C(N&minus;R,f) / C(N,f)"]:::mesh
+        F["Failure detector<br/>heartbeat, timeout = 4 &times; round"]:::mesh
+    end
+
+    MESH -- "publish / subscribe" --> BUS
+    BUS -- "gossip propagate" --> MESH
+
+    DIST{{"__distress__ topic<br/>fires when c &lt; &tau; = 0.55"}}:::distress
+    MESH -. "low-confidence broadcast" .-> DIST
+    DIST -. "re-score request" .-> MESH
+
+    CR["Weighted consensus over rank.update<br/>pick = argmax over tools of<br/>sum over agents of (weight &times; score)"]:::consensus
+    BUS --> CR
+    CR --> OUT(["Final answer<br/>topic answer.final"]):::io

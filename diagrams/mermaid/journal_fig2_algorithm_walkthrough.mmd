@@ -1,0 +1,20 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontFamily':'Arial, Helvetica, sans-serif', 'fontSize':'15px', 'primaryTextColor':'#28251D', 'lineColor':'#7A7974'}}}%%
+flowchart TD
+    classDef ingress fill:#BCE2E7,stroke:#006494,stroke-width:1.5px,color:#0C4E54;
+    classDef gossip fill:#DCEFD9,stroke:#437A22,stroke-width:1.5px,color:#2C4E16;
+    classDef score fill:#FFF3D6,stroke:#6E522B,stroke-width:1.5px,color:#5C4415;
+    classDef distress fill:#FDEEE3,stroke:#A84B2F,stroke-width:1.5px,color:#6B2A10;
+    classDef consensus fill:#F3E3E9,stroke:#A12C7B,stroke-width:1.5px,color:#6B1D52;
+    classDef final fill:#20808D,stroke:#1B474D,stroke-width:1.5px,color:#FFFFFF,font-weight:bold;
+
+    S1["<b>1. Query enters via any peer A0</b><br/>Topic-tagged message: qid, query, tools[]"]:::ingress
+    S2["<b>2. A0 publishes on topic plan.candidate</b><br/>Local subscribers fire; outbox queues for fanout = 3 peers"]:::ingress
+    S3["<b>3. Gossip round (push)</b><br/>Weighted sampling: w_p = success_p / (1 + lat_p / 1s)"]:::gossip
+    S4["<b>4. All live peers score tools in parallel</b><br/>score_tool(query, tools[]) &rarr; ranking, confidence"]:::score
+    S5["<b>5. Each peer publishes rank.update</b><br/>If confidence &lt; &tau; (0.55) &rarr; emit __distress__ broadcast"]:::distress
+    S6["<b>6. Distress responders broadcast a second opinion</b><br/>Helpers add weight to under-represented votes"]:::distress
+    S7["<b>7. Consensus pick</b><br/>argmax over &Sigma;_a w_a &middot; score_a(tool); replicated R = 3 to K/V"]:::consensus
+    S8["<b>8. Failure detector tick</b> (every round)<br/>If last_seen(p) &gt; 4s &rarr; suspect(p); future fanout skips p"]:::consensus
+    S9["<b>9. Answer emitted on answer.final</b><br/>Stored under key plan::qid across 3 replicas &mdash; survives 2 failures"]:::final
+
+    S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8 --> S9

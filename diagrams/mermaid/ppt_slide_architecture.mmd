@@ -1,0 +1,35 @@
+%%{init: {'theme':'base', 'themeVariables': { 'fontFamily':'Arial, Helvetica, sans-serif', 'fontSize':'22px', 'primaryTextColor':'#28251D', 'lineColor':'#7A7974', 'edgeLabelBackground':'#F7F6F2'}}}%%
+flowchart LR
+    classDef agent fill:#BCE2E7,stroke:#006494,stroke-width:2px,color:#0C4E54,font-weight:bold;
+    classDef mesh fill:#20808D,stroke:#1B474D,stroke-width:2px,color:#FFFFFF,font-weight:bold;
+    classDef distress fill:#FDEEE3,stroke:#A84B2F,stroke-width:2.5px,color:#6B2A10,font-weight:bold;
+    classDef consensus fill:#FFC553,stroke:#6E522B,stroke-width:2px,color:#3D2B0F,font-weight:bold;
+    classDef io fill:#DCEFD9,stroke:#437A22,stroke-width:2px,color:#2C4E16,font-weight:bold;
+
+    Q(["User Query"]):::io --> AG
+
+    subgraph AG[" 5 Equal-Peer LLM Agents "]
+        direction LR
+        A1((A1)):::agent --- A2((A2)):::agent --- A3((A3)):::agent --- A4((A4)):::agent --- A5((A5)):::agent
+        A1 -.- A3
+        A2 -.- A5
+    end
+
+    AG --> PS["Pub/Sub Bus"]:::mesh
+
+    subgraph SYS[" System Layer "]
+        direction TB
+        GS["Gossip Diffusion<br/>k = 3, TTL = 6"]:::mesh
+        RP[("Replicated K/V<br/>R = 3")]:::mesh
+        FD["Failure Detector"]:::mesh
+    end
+
+    PS --> GS
+    PS --> RP
+    PS --> FD
+
+    AG == "confidence &lt; τ = 0.55" ==> DC{{"Distress<br/>Channel"}}:::distress
+    DC == "re-score" ==> AG
+
+    PS --> CR["Weighted Consensus<br/>argmax Σ w·s"]:::consensus
+    CR --> OUT(["Final Answer"]):::io
