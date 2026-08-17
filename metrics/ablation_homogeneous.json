@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-17T13:53:22Z",
+  "purpose": "Same-model-mesh ablation requested in peer review (isolates mesh-architecture / ensembling effect from model-heterogeneity effect)",
+  "homogeneous_mesh_all_competence_0.74": {
+    "name": "S2b_mesh_homogeneous",
+    "competence_per_agent": 0.74,
+    "n_agents": 5,
+    "accuracy": 0.975,
+    "latency_ms_p50": 95.94,
+    "latency_ms_p95": 114.6,
+    "msgs_per_query": 79.78,
+    "distress_rate": 0.0,
+    "total_queries": 200
+  },
+  "heterogeneous_mesh_reference": {
+    "name": "S2_mesh_p2p (heterogeneous, from committed metrics/results.json)",
+    "accuracy": 0.975
+  },
+  "single_agent_baseline_reference": {
+    "name": "S1_baseline_linear (from committed metrics/results.json)",
+    "accuracy": 0.44
+  },
+  "finding": "Homogeneous 5-agent mesh (all competence=0.74, i.e. simulating five copies of ONE model) achieves accuracy=0.975, statistically indistinguishable from the heterogeneous 5-agent mesh's reported 0.975. This indicates the reported accuracy lift is attributable to 5-way ensembling of independent scorers, not to model heterogeneity, under the MockLLM scoring model used for all currently committed results."
+}

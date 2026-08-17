@@ -1,0 +1,19 @@
+# Core evaluation harness (src/mesh.py, src/agents.py, src/eval.py) uses only
+# the Python 3.10+ standard library (asyncio, dataclasses, random, statistics,
+# json, os, sys, time) and has no third-party dependencies.
+python-version>=3.10
+
+# Kaggle notebook / real HuggingFace backbone path (notebooks/build_notebook.py,
+# notebooks/mncd_mesh.ipynb) -- pinned for reproducibility of any real-model run.
+transformers==4.44.2
+torch==2.4.0
+accelerate==0.33.0
+bitsandbytes==0.43.3
+datasets==2.21.0
+huggingface_hub==0.24.6
+sentencepiece==0.2.0
+numpy==1.26.4
+
+# Notebook build/orchestration tooling
+nbformat==5.10.4
+jupyter==1.0.0

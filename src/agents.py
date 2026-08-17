@@ -173,13 +173,55 @@ class Agent:
 # ---------------------------------------------------------------------------
 
 def consensus_pick(ranks: list[dict], agent_weights: dict[str, float]) -> dict:
-    """Borda-style weighted vote across all rank.update messages on the bus."""
+    """Weighted score-sum vote across all rank.update messages on the bus.
+
+    NOTE (corrected post-peer-review, see paper/author_response.md Fix labelled
+    "consensus mechanism naming"): this function sums each agent's raw continuous
+    confidence score per tool, weighted by agent_weights. This is NOT rank-based
+    Borda count (which would sum (|C| - rank_a(r)) instead of the raw score s).
+    The docstring and README previously described this as "Borda-style"; that
+    characterisation was inaccurate and has been corrected here and in
+    README.md's "Core Equations" section. A true rank-based Borda variant is
+    tracked as future work (see author_response.md) since converting free-text
+    LLM outputs from the real HF backbones into a rankable form is a separate
+    open problem not yet implemented for HFBackbone.
+    """
     score: dict[str, float] = {}
     for r in ranks:
         agent_id = r.get("agent", "?")
         w = agent_weights.get(agent_id, 1.0)
         for tool_name, s in r.get("ranking", []):
             score[tool_name] = score.get(tool_name, 0.0) + w * float(s)
+    if not score:
+        return {"pick": None, "score": 0.0}
+    best = max(score.items(), key=lambda kv: kv[1])
+    return {"pick": best[0], "score": best[1], "tally": dict(sorted(score.items(),
+                                                                    key=lambda kv: -kv[1]))}
+
+
+def consensus_pick_borda(ranks: list[dict], agent_weights: dict[str, float]) -> dict:
+    """True rank-based Borda count (added post-peer-review as the correctly-named
+    counterpart to consensus_pick(), which implements weighted score-summing).
+
+    score(tool) = sum_a  w_a * (|C| - rank_a(tool))
+
+    This is scale-invariant across agents with different confidence calibration,
+    unlike consensus_pick(). It requires each agent's ranking list (already present
+    in the "ranking" payload field) to be converted to a positional rank, which is
+    straightforward for MockLLM's numeric scores but is NOT YET defined for the
+    real HFBackbone free-text path (see paper/author_response.md, Fix "consensus
+    mechanism" -- free-text-to-rank conversion is tracked as a required follow-up
+    experiment, not yet implemented here).
+    """
+    score: dict[str, float] = {}
+    for r in ranks:
+        agent_id = r.get("agent", "?")
+        w = agent_weights.get(agent_id, 1.0)
+        ranking = r.get("ranking", [])  # already sorted best-to-worst by consumer (select_tool)
+        n_candidates = len(ranking)
+        for position, (tool_name, _s) in enumerate(ranking):
+            borda_points = n_candidates - position
+            score[tool_name] = score.get(tool_name, 0.0) + w * borda_points
     if not score:
         return {"pick": None, "score": 0.0}
     best = max(score.items(), key=lambda kv: kv[1])

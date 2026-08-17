@@ -13,9 +13,9 @@
 
 ## What is MNCD?
 
-MNCD (**Mesh Network Context Diffusion**) is a fault-tolerant multi-agent architecture where LLM agents are arranged in a mesh topology and communicate via a **publish/subscribe + gossip** protocol with **replication factor R=3**. Unlike hub-and-spoke or chain architectures, MNCD has no single point of failure: if agents die or the network suffers packet loss, the mesh re-routes queries through surviving agents using Borda consensus across available responses.
+MNCD (**Mesh Network Context Diffusion** — referred to in the accompanying paper as "Mesh Network Context Distribution"; the two names are used interchangeably across the README and paper and refer to the same system) is a fault-tolerant multi-agent architecture where LLM agents are arranged in a mesh topology and communicate via a **publish/subscribe + gossip** protocol with **replication factor R=3**. Unlike hub-and-spoke or chain architectures, MNCD has no single point of failure: if agents die or the network suffers packet loss, the mesh re-routes queries through surviving agents using Borda consensus across available responses.
 
-**Novel Contribution**: MNCD is the first system to combine all four of the following in a single multi-agent LLM stack:
+**Novel Contribution**: relative to AutoGen, MetaGPT, CAMEL, and LangGraph (see "Related Work" comparison in the paper), MNCD is, to our knowledge, the first system to combine all four of the following specifically for LLM agent meshes (a narrower and more defensible claim than "first in the literature," since pub/sub, gossip, replication, and confidence-gated escalation are individually decades-old distributed-systems primitives — see `paper/mncd_paper.tex` §Related Work and `paper/review_stanford.md` Detailed Comment 5):
 1. **Pub/Sub messaging** — topic-based agent subscriptions for domain routing
 2. **Gossip protocol** — decentralised state propagation with bounded convergence
 3. **Replication (R=3)** — each query is processed redundantly by 3 agents; responses are aggregated
@@ -67,11 +67,13 @@ where:
 
 ### Borda Consensus (Response Aggregation)
 
-When R=3 agents return responses to the same query, MNCD aggregates them via Borda count:
+When R=3 agents return responses to the same query, MNCD aggregates them via a **weighted score-sum vote** (the function actually named `consensus_pick()` in `src/agents.py`):
 
-$$\text{score}_{\text{Borda}}(r) = \sum_{a \in \mathcal{A}} \left(|\mathcal{C}| - \text{rank}_a(r)\right)$$
+$$\text{score}(r) = \sum_{a \in \mathcal{A}} w_a \cdot s_a(r)$$
 
-where $\mathcal{C}$ is the candidate response set and $\text{rank}_a(r)$ is agent $a$'s ranking of response $r$. The highest-scoring response is selected as the final output.
+where $s_a(r)$ is agent $a$'s raw confidence score for response $r$ and $w_a$ is agent $a$'s consensus weight. The highest-scoring response is selected as the final output.
+
+**Correction (post-peer-review):** this README previously described the mechanism above as "Borda count" using the rank-based formula $\text{score}_{\text{Borda}}(r) = \sum_a (|\mathcal{C}| - \text{rank}_a(r))$. That formula was never implemented; the code sums raw scores, not ranks — a materially different, non-scale-invariant aggregation rule. A true rank-based Borda implementation now also exists as `consensus_pick_borda()` in `src/agents.py` for comparison; on the same 200-query synthetic fixture it scores 96.5% vs. the score-sum version's 97.5% (both well above the S1 baseline's 44.0%, confirming the choice of aggregation rule is a second-order effect relative to ensembling itself).
 
 ### Distress Trigger
 
@@ -79,11 +81,21 @@ An agent broadcasts a **distress signal** on the dedicated distress channel when
 
 $$c < \tau = 0.55$$
 
-On receiving a distress signal, the mesh automatically re-routes the query to a backup agent set and increases replication factor to R=5 for that query.
+On receiving a distress signal, the mesh re-routes the query to a backup agent set for a second opinion (`Agent.handle_distress()` in `src/agents.py`).
+
+**Correction (post-peer-review):** an earlier version of this README additionally claimed the mesh "increases replication factor to R=5 for that query" on distress. No such escalation logic exists anywhere in `src/mesh.py` — `MeshNode.R` is fixed at construction (default 3) and is never reassigned. That claim has been removed. Independent re-execution of the committed evaluation code further shows the distress channel's measured trigger rate is **0.0000 across all six reported scenarios** (see `metrics/results.json`, `distress_rate` field, and `paper/review_stanford.md` / `paper/review_cmu.md` for the root cause: `MockLLM`'s reported "confidence" is the winning score among several near-uniform draws, which is a maximum-order-statistic that is rarely below the τ=0.55 threshold regardless of correctness). A redesign of the confidence signal and a dedicated adversarial low-confidence fixture are tracked as required follow-up work — see `paper/author_response.md`.
 
 ---
 
 ## Results
+
+**Important caveat (added post-peer-review):** every number below is produced by `MockLLM`
+(`src/agents.py`), a deterministic competence-weighted random scorer, via `src/eval.py`. None of
+the three HuggingFace backbones listed above (Gemma-2-2B, Qwen2.5-7B, Llama-3.1-8B) were used to
+produce these committed numbers — `metrics/results.json`'s `git_commit` field is `"n/a"` and no
+artifact in this repository shows the Kaggle notebook was executed. Real-backbone numbers are
+planned; see `paper/author_response.md` for the committed experiment plan and timeline. Treat the
+table below as a systems-layer (gossip/replication/consensus) evaluation, not an LLM-quality evaluation.
 
 ### Scenario Benchmark
 
@@ -106,7 +118,14 @@ Key findings:
 
 ### data.gov.in — Karnataka APMC
 
-S5 uses 15 live Karnataka APMC mandi queries sourced from data.gov.in. The mesh distributes these queries across specialised agents (price lookup, market availability, crop advisory).
+**S5/S6 are synthetic, not live queries (corrected post-peer-review).** The live `data.gov.in`
+Karnataka APMC endpoint returned no rows at evaluation time, so `src/eval.py::make_karnataka_fixture()`
+generates all 15 commodity/district rows from a hardcoded Python list with the same field schema
+(state, district, market, commodity, variety, grade, arrival_date, min/max/modal price). This was
+previously disclosed only in the paper's Limitations section; it is stated here up front. Flipping
+`USE_LIVE=True` once the live endpoint returns data is planned but not yet implemented (no such flag
+currently exists in `eval.py` — it must still be added). The mesh distributes these (synthetic) queries
+across specialised agents (price lookup, market availability, crop advisory).
 
 **Expansion roadmap**:
 
@@ -164,23 +183,29 @@ class MessageEnvelope:
 ```
 mncd-mesh-agents/
 ├── src/
-│   ├── mesh.py              # Mesh topology, pub/sub, gossip
-│   ├── agent.py             # Agent base class (confidence scoring)
-│   ├── consensus.py         # Borda aggregation
-│   ├── distress.py          # Distress channel logic (c < τ=0.55)
-│   ├── replication.py       # R=3 redundant dispatch
-│   └── context_bus.py       # Message envelope + user_language broadcast
-├── experiments/
-│   ├── scenario_s1.py       # Baseline
-│   ├── scenario_s2.py       # Full mesh
-│   ├── scenario_s3.py       # 2/5 agents dead
-│   ├── scenario_s4.py       # 20% packet loss
-│   └── scenario_s5.py       # Karnataka APMC real data
-├── kaggle/
-│   └── mncd_mesh.ipynb      # Reproducible benchmark
-└── docs/
-    └── README_OBJ3.md       # This file
+│   ├── mesh.py                    # Mesh topology, pub/sub, gossip, replication, failure detection
+│   ├── agents.py                  # Agent class, MockLLM backbone, consensus_pick() / consensus_pick_borda()
+│   ├── eval.py                    # Evaluation harness: fixtures + S1-S6 scenario runners
+│   └── ablation_homogeneous.py    # Same-model-mesh ablation (added post-peer-review)
+├── notebooks/
+│   └── build_notebook.py          # Generates notebooks/mncd_mesh.ipynb; defines the real HFBackbone class
+├── tables/
+│   ├── table1_main_results.{md,csv}
+│   ├── table2_sota_comparison.{md,csv}   # superseded, see table2_qualitative.md
+│   └── table2_qualitative.md             # revised qualitative comparison (post-peer-review)
+├── metrics/
+│   └── results.json               # S1-S6 scenario metrics (MockLLM-only; see caveat below)
+├── paper/
+│   ├── mncd_paper.tex
+│   ├── review_stanford.md         # independent peer review (distributed systems)
+│   ├── review_cmu.md              # independent peer review (agent orchestration / benchmarking)
+│   └── author_response.md         # response to both reviews + examiner report
+└── dashboard/                     # Next.js results dashboard (Vercel deployment)
 ```
+
+*(This section previously listed an idealized/planned layout — `src/agent.py`, `consensus.py`,
+`distress.py`, `replication.py`, `context_bus.py`, and a separate `experiments/` directory — that did
+not match the actual repository contents. It has been corrected above to reflect the real file layout.)*
 
 ---
 
