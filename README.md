@@ -1,19 +1,47 @@
-# MNCD — Mesh Network Context Diffusion
+# MNCD — Mesh Network Context Diffusion (ACRS Objective 3)
 
-> **PhD Objective 3** | Fault-Tolerant Multi-Agent LLM Mesh for Agricultural AI
+> **Ph.D. CSE, M S Ramaiah University of Applied Sciences (FET).**  
+> Scholar: Jenisha T (`24ETRP720001`). Supervisor: Dr. Jyothi A P.  
+> Integrated loop: SATR → APRR → **MNCD** → FCNP.
 
-[![GitHub](https://img.shields.io/badge/GitHub-Public-black)](https://github.com/joyjeni/mncd-mesh-agents)
-[![Kaggle](https://img.shields.io/badge/Kaggle-Notebook-blue)](https://www.kaggle.com)
-[![data.gov.in](https://img.shields.io/badge/data.gov.in-Karnataka%20APMC-orange)](https://data.gov.in)
-[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
+This repository is the **consensus-and-execution chapter** of ACRS. Agents gossip
+`(toolId, score)` on a mesh, aggregate by **score-sum** (`consensus_pick`; Borda
+exists as `consensus_pick_borda` and is **not** the evaluation default), then
+execute only live `data.gov.in` resources whose UUIDs and GODL-India / NIC
+provenance have been verified.
 
-**GitHub**: https://github.com/joyjeni/mncd-mesh-agents (PUBLIC — previously private, now open)
+**Proposal-stage stance:** accuracy percentages, “2 of 5 agents down” survival
+figures, and synthetic-fixture scores are **not** commitments of the research
+proposal. The unit of publication is the protocol plus the live-citation contract.
+
+## SOTA this chapter is written against
+
+- Wu et al., AutoGen, ICLR 2024 LLM Agents Workshop / COLM 2024, arXiv:2308.08155.
+- Hong et al., MetaGPT, ICLR 2024.
+- Qian et al., ChatDev, ACL 2024, arXiv:2307.07924.
+- Li et al., CAMEL, NeurIPS 2023.
+
+**Gap (G3).** Those systems coordinate over natural-language messages, not over
+tool identifiers backed by a ministry API.
+
+**Novelty.** Vote object = tool ID. Fail-loud live OGD (retry 5xx/429; never
+invent prices). Agriculture lock for the demonstration corpus.
 
 ---
 
 ## What is MNCD?
 
-MNCD (**Mesh Network Context Diffusion** — referred to in the accompanying paper as "Mesh Network Context Distribution"; the two names are used interchangeably across the README and paper and refer to the same system) is a fault-tolerant multi-agent architecture where LLM agents are arranged in a mesh topology and communicate via a **publish/subscribe + gossip** protocol with **replication factor R=3**. Unlike hub-and-spoke or chain architectures, MNCD has no single point of failure: if agents die or the network suffers packet loss, the mesh re-routes queries through surviving agents using Borda consensus across available responses.
+MNCD (**Mesh Network Context Diffusion**) is a multi-agent architecture where LLM
+agents sit on a mesh and communicate via publish/subscribe plus gossip with
+replication factor R=3. Unlike hub-and-spoke or chain architectures, there is no
+single planner as the vote object: agents publish `(toolId, score)` and
+`consensus_pick()` aggregates by **weighted score-sum**.
+
+A true rank-based Borda implementation exists as `consensus_pick_borda()` for
+comparison and is **not** the default. Do not describe the default as Borda.
+
+**Proposal-stage:** synthetic “97%” style figures in older revisions are not
+commitments of the Ph.D. proposal.
 
 **Novel Contribution**: relative to AutoGen, MetaGPT, CAMEL, and LangGraph (see "Related Work" comparison in the paper), MNCD is, to our knowledge, the first system to combine all four of the following specifically for LLM agent meshes (a narrower and more defensible claim than "first in the literature," since pub/sub, gossip, replication, and confidence-gated escalation are individually decades-old distributed-systems primitives — see `paper/mncd_paper.tex` §Related Work and `paper/review_stanford.md` Detailed Comment 5):
 1. **Pub/Sub messaging** — topic-based agent subscriptions for domain routing
