@@ -1,8 +1,11 @@
 # MNCD — Mesh Network Context Diffusion (ACRS Objective 3)
 
 > **Ph.D. CSE, M S Ramaiah University of Applied Sciences (FET).**  
-> Scholar: Jenisha T (`24ETRP720001`). Supervisor: Dr. Jyothi A P.  
+> Scholar: Jenisha T (`24ETRP720001`). Supervisor: Dr. Padma Priya Darshini P.  
 > Integrated loop: SATR → APRR → **MNCD** → FCNP.
+
+
+> **Postdoctoral review (November 2026) — read first.** 2 critical issue(s) affect the results reported below; see [`docs/POSTDOC_REVIEW.md`](docs/POSTDOC_REVIEW.md) before citing any number from this repository.
 
 This repository is the **consensus-and-execution chapter** of ACRS. Agents gossip
 `(toolId, score)` on a mesh, aggregate by **score-sum** (`consensus_pick`; Borda
