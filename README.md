@@ -1,8 +1,58 @@
-# MNCD — Mesh Network Context Diffusion (ACRS Objective 3)
+# MNCD — Mesh Network Context Diffusion (ACRS objective O4: Byzantine-tolerant coordination for certified execution)
 
 > **Ph.D. CSE, M S Ramaiah University of Applied Sciences (FET).**  
-> Scholar: Jenisha T (`24ETRP720001`). Supervisor: Dr. Padma Priya Darshini P.  
-> Integrated loop: SATR → APRR → **MNCD** → FCNP.
+> Scholar: Jenisha T (`24ETRP720001`). Supervisor: Dr. Padma Priya Dharishini P.  
+> ACRS objectives in the order they act: O1 session-adaptive tool scoring (SATR) → O2 PID-controlled provenance pruning (FCNP) → O3 risk-weighted policy routing (APRR) → **O4 certified execution (MNCD)**, with G1 policy as code.
+
+**Objective numbering.** The thesis numbers the objectives in the order in which they act within one step. Older sections of this README and the notebooks call this work "Objective 3"; in the thesis it is **O4**.
+
+## Latest: ACRS on AppWorld (November 2026)
+
+In ACRS the mesh vote moves from "which tool" to "which outcome". On [AppWorld](https://github.com/StonyBrookNLP/appworld) (Trivedi et al., ACL 2024: 9 apps, 457 APIs, tasks graded by state-based unit tests), when a proposed code block would change the world, O4 samples further candidate programs, saves the world state, runs every candidate from that state, records the state-changing calls each one made and whether it raised an error, and restores the state and the agent's variables after each run. With three candidates, the outcome with the largest share of clean runs is certified if the share reaches 0.5 with at least two supporters, and only then is it executed for real; otherwise ACRS abstains and the agent is told why. Login steps are exempt. Before anything runs, G1 (policy as code) denies deletions the task does not ask for, writes outside the task's apps, and ids or e-mail addresses the agent never observed.
+
+**Development split, first full run** (57 tasks in 19 scenarios, one seed; Qwen3-8B and Qwen3-4B in 4-bit AWQ on two free T4 GPUs; Kaggle: seven configurations in 10 h 32 min, the run without O3 in a second session of 131 min). Aggregates only: AppWorld task text and API outputs are not published.
+
+| Configuration | Task success (TGC) | Scenarios (SGC) | Tokens (M) | Wall (min) | Collateral damage |
+|---|---|---|---|---|---|
+| Reference agent (8B on every step, no ACRS part) | 19.3 % (11/57) | 1/19 | 3.39 | 58 | 0/57 |
+| **Full ACRS** | **17.5 % (10/57)** | **3/19** | **3.36** | **123** | **0/57** |
+| O2 only | 15.8 % (9/57) | 1/19 | 2.22 | 34 | 0/57 |
+| Full without O1 | 10.5 % (6/57) | 0/19 | 2.48 | 88 | 0/57 |
+| Full without O2 | 19.3 % (11/57) | 2/19 | 4.16 | 145 | 0/57 |
+| Full without O3 | 14.0 % (8/57) | 1/19 | 3.14 | 131 | 0/57 |
+| Full without O4 | 14.0 % (8/57) | 0/19 | 1.38 | 47 | 1/57 |
+| Full without G1 | 12.3 % (7/57) | 0/19 | 3.57 | 129 | 0/57 |
+
+What the run shows for O4 (RQ4):
+
+- In full ACRS, 309 state-changing steps were put to a vote: 58 were certified and committed, 26 were withheld because the candidates disagreed, and in 225 every candidate raised an error, so nothing was executed.
+- No collateral damage in any configuration with O4, against one task (1/57) without it. This is a safety signal resting on a single event.
+- Certification is costly: full ACRS used 2.4 times the tokens and 2.6 times the wall time of the same system without O4.
+- G1 made no denial in this split, so it is not yet tested on AppWorld.
+- Status: signal only; tasks with planted faults and unsafe instructions, and a cheaper vote, are needed before RQ4 can be answered.
+
+No configuration differs significantly in task success on 57 tasks (every McNemar p ≥ 0.34; full ACRS against full without O4: 4 tasks against 2, p = 0.688); the test splits will be run with three seeds. The released harness uses the earlier numbering in its configuration names (`no_o3` is the run without O4).
+
+**Security controls in the harness (policy as code).** Deny by default; every condition must hold; each rule traced to a source and tested in both directions; exportable to OPA Rego.
+
+| Rule | What it enforces |
+|---|---|
+| `R-AW-DEL` | A delete-type call runs only if the task asks to delete or remove. |
+| `R-AW-SCOPE` | Writes only to apps the task allows. |
+| `R-AW-PROV` | An id, e-mail address or phone number written by a state-changing call must have been observed in the task or an earlier result. |
+| `R-COMMIT-01` | Commit an answer only when it is certified, the quorum holds, no quarantined evidence is used and no stage failed (fail closed). |
+| `R-EXEC-01` | A peer may call only a read-only tool that O1 committed for the sub-goal (least privilege). |
+| `R-EXEC-02` | A state-changing tool runs only after a named person approved that exact call. |
+| `R-MEM-01` | Only successful, non-quarantined observations enter the next turn's context and O1's session prior. |
+| `R-REL-01` | A release is promoted by a named approver after the evaluation gate passed on a pinned manifest. |
+
+- Code: [joyjeni/acrs-appworld, branch `o4-provenance`](https://github.com/joyjeni/acrs-appworld/tree/o4-provenance)
+- Dashboard: the Next.js app in [`dashboard/`](dashboard/) shows the AppWorld results first, then the earlier mesh results; aggregate data in [`dashboard/public/data/appworld_dev.json`](dashboard/public/data/appworld_dev.json).
+- The dashboard no longer loads `polyfill.io` (that domain was taken over in 2024 and served malicious code).
+
+## Earlier work: the decentralised mesh (June 2026)
+
+The rest of this README documents MNCD as developed before AppWorld, with simulated agents.
 
 
 > **Postdoctoral review (November 2026) — read first.** 2 critical issue(s) affect the results reported below; see [`docs/POSTDOC_REVIEW.md`](docs/POSTDOC_REVIEW.md) before citing any number from this repository.
@@ -96,7 +146,7 @@ where:
 - $\ell_{pq}$ — network latency between agents $p$ and $q$ (normalised)
 - $\alpha \in [0,1]$ — trade-off between semantic fit and low latency
 
-### Borda Consensus (Response Aggregation)
+### Weighted score-sum consensus (response aggregation)
 
 When R=3 agents return responses to the same query, MNCD aggregates them via a **weighted score-sum vote** (the function actually named `consensus_pick()` in `src/agents.py`):
 
@@ -141,7 +191,7 @@ table below as a systems-layer (gossip/replication/consensus) evaluation, not an
 Key findings:
 - The mesh achieves **+53.5 percentage points** over the single-agent baseline (S1 → S2).
 - Fault tolerance is robust: performance degrades by only **0.5%** when 2/5 agents are dead (S2 → S3).
-- Real-world APMC data queries (S5) achieve 93.3% despite mandi price data noise and missing records.
+- The APMC-schema queries (S5) reach 93.3%; these 15 rows are synthetic, with the live schema (see Data Sources below), not live data.
 
 ---
 
@@ -162,7 +212,7 @@ across specialised agents (price lookup, market availability, crop advisory).
 
 | Region          | Status           | Resource Type              |
 |-----------------|------------------|----------------------------|
-| Karnataka APMC  | ✅ Integrated    | 15 mandi queries in S5     |
+| Karnataka APMC  | Synthetic fixture with the live schema | 15 mandi queries in S5 |
 | Tamil Nadu APMC | Planned (Phase 2)| TN Agriculture Dept APIs   |
 | Kerala APMC     | Planned (Phase 2)| VFPCK / e-market APIs      |
 
@@ -242,7 +292,7 @@ not match the actual repository contents. It has been corrected above to reflect
 
 ## Integration with PhD Pipeline
 
-MNCD is **Objective 3** in the four-component PhD pipeline:
+MNCD is **Objective 3** in the four-component PhD pipeline as it was numbered in June 2026 (O4 in the thesis numbering; see the top of this README):
 
 ```
 [Obj2: APRR] ──routing decision──► [Obj3: MNCD] ──mesh context──► [Obj4: FCNP]
@@ -287,13 +337,15 @@ git clone https://github.com/joyjeni/mncd-mesh-agents
 cd mncd-mesh-agents
 pip install -r requirements.txt
 
-# Run all scenarios
-python experiments/scenario_s1.py   # Baseline
-python experiments/scenario_s2.py   # Full mesh
-python experiments/scenario_s3.py   # 2/5 dead
-python experiments/scenario_s4.py   # Packet loss
-python experiments/scenario_s5.py   # Karnataka APMC
+# Run scenarios S1–S6 with the MockLLM backbone (standard library only); writes metrics/results.json
+python src/eval.py
+
+# Figures and tables from metrics/results.json
+python src/make_figures.py
+python src/make_diagrams.py
 ```
+
+S4 (20 % packet loss) depends on asyncio timing and can differ by one query between runs: the committed file has 97.0 %, two re-runs in November 2026 gave 97.5 %. The other scenarios reproduce exactly.
 
 ---
 
