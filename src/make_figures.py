@@ -1,4 +1,7 @@
-"""Generate publication-ready figures and tables from metrics/results.json."""
+"""Generate publication-ready figures and tables from metrics/results.json.
+
+Palette: blue for the mesh, greys for the baseline and secondary measures; no red or green.
+"""
 from __future__ import annotations
 
 import json
@@ -30,7 +33,7 @@ def fig_accuracy_bar(data: dict) -> str:
     labels = ["Baseline\n(1 agent)", "Mesh\n(5 agents)", "Mesh\n(2/5 failed)",
               "Mesh\n(20% loss)"]
     vals = [s[k]["accuracy"] * 100 for k in keys]
-    colors = ["#888888", "#1f77b4", "#2ca02c", "#ff7f0e"]
+    colors = ["#8f8e88", "#2a78d6", "#1c5cab", "#86b6ef"]
     fig, ax = plt.subplots(figsize=(7.5, 4.0))
     bars = ax.bar(labels, vals, color=colors, edgecolor="black", linewidth=0.6)
     ax.set_ylim(0, 105)
@@ -54,7 +57,7 @@ def fig_latency_box(data: dict) -> str:
     series = [[r["latency_ms"] for r in s[k]] for k in keys]
     fig, ax = plt.subplots(figsize=(7.5, 4.0))
     bp = ax.boxplot(series, tick_labels=labels, showfliers=False, patch_artist=True)
-    for patch, c in zip(bp["boxes"], ["#cccccc", "#1f77b4", "#2ca02c", "#ff7f0e"]):
+    for patch, c in zip(bp["boxes"], ["#cccccc", "#2a78d6", "#1c5cab", "#86b6ef"]):
         patch.set_facecolor(c)
         patch.set_alpha(0.7)
     ax.set_ylabel("End-to-end latency per query (ms)")
@@ -77,28 +80,28 @@ def fig_uptime_replication(data: dict) -> str:
     fig, ax1 = plt.subplots(figsize=(7.5, 4.0))
     x = list(range(len(keys)))
     w = 0.35
-    b1 = ax1.bar([xi - w / 2 for xi in x], uptime, w, color="#1f77b4",
+    b1 = ax1.bar([xi - w / 2 for xi in x], uptime, w, color="#2a78d6",
                  label="Uptime (%)", edgecolor="black", linewidth=0.6)
-    ax1.set_ylabel("Uptime (%)", color="#1f77b4")
+    ax1.set_ylabel("Uptime (%)", color="#2a78d6")
     ax1.set_ylim(0, 110)
     ax1.set_xticks(x)
     ax1.set_xticklabels(labels)
-    ax1.tick_params(axis="y", labelcolor="#1f77b4")
+    ax1.tick_params(axis="y", labelcolor="#2a78d6")
 
     ax2 = ax1.twinx()
-    b2 = ax2.bar([xi + w / 2 for xi in x], rep, w, color="#d62728",
+    b2 = ax2.bar([xi + w / 2 for xi in x], rep, w, color="#6e6d68",
                  label="Replication factor", edgecolor="black", linewidth=0.6)
-    ax2.set_ylabel("Replicas per critical key", color="#d62728")
+    ax2.set_ylabel("Replicas per critical key", color="#6e6d68")
     ax2.set_ylim(0, 3.5)
-    ax2.tick_params(axis="y", labelcolor="#d62728")
-    ax2.axhline(y=3, linestyle=":", color="#d62728", alpha=0.5, label="Target R=3")
+    ax2.tick_params(axis="y", labelcolor="#6e6d68")
+    ax2.axhline(y=3, linestyle=":", color="#6e6d68", alpha=0.5, label="Target R=3")
 
     for b, v in zip(b1, uptime):
         ax1.text(b.get_x() + b.get_width() / 2, v + 2, f"{v:.0f}%",
-                 ha="center", fontsize=9, color="#1f77b4")
+                 ha="center", fontsize=9, color="#2a78d6")
     for b, v in zip(b2, rep):
         ax2.text(b.get_x() + b.get_width() / 2, v + 0.1, f"{v:.2f}",
-                 ha="center", fontsize=9, color="#d62728")
+                 ha="center", fontsize=9, color="#6e6d68")
 
     ax1.set_title("Figure 3. Uptime and replication coverage under faults")
     fig.tight_layout()
@@ -114,7 +117,7 @@ def fig_message_cost(data: dict) -> str:
     labels = ["Healthy", "2/5 nodes failed", "20% packet loss"]
     vals = [s[k]["msgs_per_query"] for k in keys]
     fig, ax = plt.subplots(figsize=(7.5, 4.0))
-    bars = ax.bar(labels, vals, color=["#1f77b4", "#2ca02c", "#ff7f0e"],
+    bars = ax.bar(labels, vals, color=["#2a78d6", "#1c5cab", "#86b6ef"],
                   edgecolor="black", linewidth=0.6)
     ax.set_ylabel("Mesh messages per query (pub + recv)")
     ax.set_title("Figure 4. Gossip cost per query")
@@ -135,7 +138,7 @@ def fig_karnataka(data: dict) -> str:
     labels = ["Baseline\n(single agent)", "Mesh\n(5 agents)"]
     acc = [s[k]["accuracy"] * 100 for k in keys]
     fig, ax = plt.subplots(figsize=(6.0, 4.0))
-    bars = ax.bar(labels, acc, color=["#888888", "#2ca02c"],
+    bars = ax.bar(labels, acc, color=["#8f8e88", "#1c5cab"],
                   edgecolor="black", linewidth=0.6)
     ax.set_ylim(0, 105)
     ax.set_ylabel("Accuracy on 15 Karnataka APMC endpoints (%)")
@@ -205,7 +208,7 @@ def table_sota() -> tuple[str, str]:
          "ICLR 2024 / arXiv:2307.16789"],
         ["**MNCD (this work)**", "**P2P mesh + gossip**",
          "**Topic pub/sub + gossip [Demers 1987]**",
-         "**Yes (97% acc. with 2/5 dead)**", "**Yes (R=3)**", "**Yes (\u03c4=0.55)**",
+         "**Yes (97% acc. with 2/5 dead)**", "**Yes (R=3)**", "**Yes (τ=0.55)**",
          "**ToolBench-syn 97.5%**", "**this paper**"],
     ]
     csv_lines = [",".join(f'"{c}"' for c in hdr)]
