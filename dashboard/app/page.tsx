@@ -45,7 +45,7 @@ export default function Home() {
         <AwSetup aw={aw} focus="O4" />
       </Card>
 
-      <Card id="aw-results" title="Outcome and cost of every configuration" intro="57 development tasks, one seed. The full-ACRS row is shaded; the run without O3 is scheduled.">
+      <Card id="aw-results" title="Outcome and cost of every configuration" intro="57 development tasks, one seed. The full-ACRS row is shaded.">
         <AwTable aw={aw} />
         <div style={{ height: 20 }} />
         <AwCharts aw={aw} />
@@ -107,7 +107,7 @@ export default function Home() {
         <p style={{ background: C.panel, padding: 14, borderRadius: 8, border: `1px solid ${C.line}` }}>
           {`\\[ P_{\\text{survive}}(R, f, N) \\;=\\; 1 - \\binom{N-R}{f} \\big/ \\binom{N}{f} \\]`}
         </p>
-        <p><b>Consensus rule (weighted Borda):</b></p>
+        <p><b>Consensus rule (weighted score-sum, as in <code>consensus_pick</code>; not Borda):</b></p>
         <p style={{ background: C.panel, padding: 14, borderRadius: 8, border: `1px solid ${C.line}` }}>
           {`\\[ \\hat{t} \\;=\\; \\arg\\max_{t \\in \\mathcal{T}} \\sum_{a \\in \\mathcal{A}} w_a \\cdot s_a(t \\mid q) \\]`}
         </p>
