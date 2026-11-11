@@ -50,7 +50,7 @@ def diagram_architecture():
         box = patches.FancyBboxPatch((x - 0.85, y - 0.4), 1.7, 0.8,
                                      boxstyle="round,pad=0.08",
                                      edgecolor="black",
-                                     facecolor="#cfe2f3", linewidth=1.2)
+                                     facecolor="#dbe7f6", linewidth=1.2)
         ax.add_patch(box)
         ax.text(x, y + 0.08, name, ha="center", fontsize=10, fontweight="bold")
         ax.text(x, y - 0.22, "LLM + MeshNode", ha="center", fontsize=8, color="#444")
@@ -58,11 +58,11 @@ def diagram_architecture():
     # Components ring around each node — just annotate one
     legend_x, legend_y = 0.4, 7.5
     legend_items = [
-        ("Pub/Sub bus",        "#cfe2f3"),
-        ("Gossip outbox",      "#d9ead3"),
-        ("Replicated K/V (R=3)","#fff2cc"),
-        ("Failure detector",   "#f4cccc"),
-        ("Distress channel",   "#ead1dc"),
+        ("Pub/Sub bus",        "#dbe7f6"),
+        ("Gossip outbox",      "#e8eaf0"),
+        ("Replicated K/V (R=3)","#f6f1df"),
+        ("Failure detector",   "#eceae4"),
+        ("Distress channel",   "#ece8f4"),
     ]
     for i, (lab, c) in enumerate(legend_items):
         y = legend_y - i * 0.45
@@ -75,7 +75,7 @@ def diagram_architecture():
 
     # External I/O
     box1 = patches.FancyBboxPatch((9.0, 7.3), 2.6, 1.1, boxstyle="round,pad=0.08",
-                                  facecolor="#f9cb9c", edgecolor="black", linewidth=1.0)
+                                  facecolor="#f3e6c8", edgecolor="black", linewidth=1.0)
     ax.add_patch(box1)
     ax.text(10.3, 8.05, "Query in", ha="center", fontsize=10, fontweight="bold")
     ax.text(10.3, 7.7, "ToolBench / Karnataka", ha="center", fontsize=9)
@@ -85,7 +85,7 @@ def diagram_architecture():
                 arrowprops=dict(arrowstyle="->", lw=1.4, color="#666"))
 
     box2 = patches.FancyBboxPatch((9.0, 0.6), 2.6, 1.1, boxstyle="round,pad=0.08",
-                                  facecolor="#b6d7a8", edgecolor="black", linewidth=1.0)
+                                  facecolor="#dbe7f6", edgecolor="black", linewidth=1.0)
     ax.add_patch(box2)
     ax.text(10.3, 1.35, "Consensus answer", ha="center", fontsize=10, fontweight="bold")
     ax.text(10.3, 1.0, "Weighted vote across", ha="center", fontsize=9)
@@ -133,31 +133,31 @@ def diagram_algorithm():
     steps = [
         ("1. Query enters via any peer A0",
          "Topic-tagged message msg = (qid, query, tools[])",
-         "#cfe2f3"),
+         "#dbe7f6"),
         ("2. A0 publishes on topic 'plan.candidate'",
          "Local subscribers fire; outbox queues for fanout=3 peers",
-         "#cfe2f3"),
+         "#dbe7f6"),
         ("3. Gossip round (push)",
          "Each peer relays via weighted sampling: w_p = success_p / (1 + lat_p/1s)",
-         "#d9ead3"),
+         "#e8eaf0"),
         ("4. All live peers score tools in parallel",
          "score_tool(query, tools[]) → ranking, confidence",
-         "#fff2cc"),
+         "#f6f1df"),
         ("5. Each peer publishes 'rank.update'",
          "if confidence < τ (=0.55) → emit '__distress__' broadcast",
-         "#ead1dc"),
+         "#ece8f4"),
         ("6. Distress responders broadcast a second opinion",
          "Helpers add weight to under-represented votes",
-         "#ead1dc"),
+         "#ece8f4"),
         ("7. Consensus pick",
          "argmax over Σ_agents w_a · score_a(tool); replicated R=3 to K/V",
-         "#f4cccc"),
+         "#eceae4"),
         ("8. Failure detector tick (every round)",
          "If last_seen(p) > 4s → suspect(p); future fanout skips p",
-         "#fce5cd"),
+         "#f3eee4"),
         ("9. Answer emitted on 'answer.final'",
          "Stored under key plan::qid across 3 replicas — survives 2 failures",
-         "#b6d7a8"),
+         "#dbe7f6"),
     ]
     y0 = 9.5
     h = 0.85
