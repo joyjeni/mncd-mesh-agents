@@ -28,8 +28,9 @@ What the run shows for O4 (RQ4):
 - In full ACRS, 309 state-changing steps were put to a vote: 58 were certified and committed, 26 were withheld because the candidates disagreed, and in 225 every candidate raised an error, so nothing was executed.
 - No collateral damage in any configuration with O4, against one task (1/57) without it. This is a safety signal resting on a single event.
 - Certification is costly: full ACRS used 2.4 times the tokens and 2.6 times the wall time of the same system without O4.
+- With three candidates per vote, the quorum bound in the thesis tolerates no faulty candidate (f = 0), so this vote is an agreement check between candidates, not a Byzantine guarantee; the guarantee needs at least four candidates.
 - G1 made no denial in this split, so it is not yet tested on AppWorld.
-- Status: signal only; tasks with planted faults and unsafe instructions, and a cheaper vote, are needed before RQ4 can be answered.
+- Status: signal only; tasks with planted faults and unsafe instructions, votes with at least four candidates, and a cheaper vote are needed before RQ4 can be answered.
 
 No configuration differs significantly in task success on 57 tasks (every McNemar p ≥ 0.34; full ACRS against full without O4: 4 tasks against 2, p = 0.688); the test splits will be run with three seeds. The released harness uses the earlier numbering in its configuration names (`no_o3` is the run without O4).
 
